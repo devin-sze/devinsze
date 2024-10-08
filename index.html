@@ -51,6 +51,8 @@
         <div id="ball_container"></div>
     </div>
 
+    
+
     <div id="play_pause" onclick="start_stop_balls()" onmouseenter="play_pause_mouse()" onmouseleave="play_pause_mouse()" title="play simulation">
         <div id="pp1"></div>
         <div id="pp2"></div>
@@ -59,22 +61,28 @@
     <div id="front_page">
         <div>
             <h1>Devin Sze</h1>
-            <p>I am a Computer Science Master's at UC Davis researching machine learning and static ensemble pruning, with a background in data science, education, and computer security.</p>
+            <p>I am a Computer Science Master's at UC Davis researching machine learning and static ensemble pruning, with a background in computer vision, large language models, and data science.</p>
             <div class="social_container">
-                <a href="https://www.instagram.com/devinquiry/"><div class="social ig"></div></a>
+
                 <a href="https://www.linkedin.com/in/devin-sze/" title="LinkedIn"><div class="social ln"></div></a>
+                <div class="social mail" onclick="copyEmail()" title="Copy Email"></div>
+                <a href="https://github.com/devin-sze" title="Github"><div class="social git"></div></a>
+                <a href="https://www.instagram.com/devinquiry/" title="Art Potfolio"><div class="social ig"></div></a>
+
                 <!-- <div class="social mail" onclick="copyEmail()" onmouseover="askEmail()" onmouseout="resetEmail()"> -->
                     <!-- <div class="social mail" onmouseover="askEmail()" onmouseout="resetEmail()"> -->
-                <div class="social mail" onmouseover="askEmail()" ontouchstart="askEmail()">
-                    <span class="glass" id="mail_arrow"></span>
-                    <span class="glass" id="mail_span">devinsze11@gmail.com</span> <!--copy to clipboard-->
+                <!-- <div class="social mail" onmouseover="askEmail()" ontouchstart="askEmail()"> -->
+                    <!-- <span class="glass" id="mail_arrow"></span> -->
+                    <!-- <span class="glass" id="mail_span">devinsze11@gmail.com</span> copy to clipboard -->
                     <!-- <input type="text" value="devin.sze@berkeley.edu" id="email_copy" style="display:none;"> -->
-                </div>
-                <a href="https://github.com/devin-sze"><div class="social git"></div></a>
+                <!-- </div> -->
+                
             </div>
             <!-- <div id="email_popup">Copy to clipboard</div> -->
         </div>
     </div>
+
+    <div class="glass" id="copy_alert" title="Copy Email">Copied: devinsze11@gmail.com</div>
 
 
     <div class="body_info">
@@ -84,7 +92,7 @@
                 <div id="bio">
 
                     <p>I am a Computer Science Master's student at the University of California, Davis where I am researching machine learning, static ensemble pruning, and generative tiemseries models. I graduated from the University of California, Berkeley with a double major in Computer Science and Data Science with an emphasis in Business and Industrial Analytics.</p>
-                    <p>I am currently a computer vision engineer at the Johns Hopkins Applied Physics Lab where I prototyped, developed, and finetuned state-of-the-art live scene understanding large language models. During summer 2023, I was a machine learning intern at Nokia where I developed several generative ML models that learned the underlying sturcture of a dataset, then generated statistically-similar data. During summer 2022, I was a software engineer intern for Amazon Web Services (AWS) where I deployed proof-of-concept A/B Testing and Feature Flagging software packages that measured and analyzed the effectiveness of classification systems. I was also a researcher at the Berkeley Artificial Intelligence Research Lab where I work on the <a class="text_link" href="https://circles-consortium.github.io/about.html">CIRCLES initiative</a> to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning.</p>
+                    <p>I am currently a computer vision engineer at the Johns Hopkins Applied Physics Lab where I prototyped, developed, and finetuned state-of-the-art live large language models for maritime scene understanding. From 2023 to 2024, I was a machine learning intern at Nokia where I developed several generative ML models that learned the underlying sturcture of a dataset, then generated brand-new, statistically-similar data. During summer 2022, I was a software engineer intern for Amazon Web Services (AWS) where I deployed proof-of-concept A/B Testing and Feature Flagging software packages that measured and analyzed the effectiveness of classification systems. I was also a researcher at the Berkeley Artificial Intelligence Research Lab where I work on the <a class="text_link" href="https://circles-consortium.github.io/about.html">CIRCLES initiative</a> to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning.</p>
                     <p>I am a TA for <i>Programming and Problem Solving</i> at Davis, was a TA for <i>Foundations of Data Science</i> at Berkeley, and am a member of <i>Upsilon Pi Epsilon</i>, the international computer science honor society.</p>                        
                 </div>
                 <div id="interests">
@@ -101,7 +109,7 @@
                 <div id="education">
                     <h4>Education</h4>
                     <ul>
-                        <li>University of California, Davis<h5>M.S. Computer Science</h5><h6>2023 - 2025</h6></li>
+                        <li>University of California, Davis<h5>M.S. Computer Science</h5><h6>2023 - 2024</h6></li>
                         <li>University of California, Berkeley<h5>B.A. Computer Science</h5><h5>B.A. Data Science</h5><h6>2019 - 2023</h6></li>
                     </ul>
                 </div>

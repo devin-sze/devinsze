@@ -528,6 +528,28 @@ a.text_link:active {
   color: #224893;
 }
 
+#copy_alert {
+  position: fixed;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 50%;
+  bottom: 0px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 10px;
+  background-color: #e5e0e074;
+  text-align: center;
+  padding: 8px 25px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  opacity: 0;
+  -webkit-box-shadow: 3px 3px 3px #8080805f;
+          box-shadow: 3px 3px 3px #8080805f;
+}
+
 .body_info {
   background-color: white;
   display: -ms-grid;
@@ -1097,6 +1119,14 @@ html:not([data-scroll='0']) .header {
   #nav_container .curr {
     color: white;
     background-color: #264a93;
+  }
+  #copy_alert {
+    background-color: #b7b7b7;
+    color: black;
+    -webkit-box-shadow: 3px 3px 3px #dbdbdb;
+            box-shadow: 3px 3px 3px #dbdbdb;
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
   }
   .social_container .social:hover {
     background-color: #b7b7b7;

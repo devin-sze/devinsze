@@ -549,6 +549,22 @@ a.text_link {
         }
     }
 }
+#copy_alert{
+    position: fixed;
+    height: fit-content;
+    left: 50%;
+    bottom: 0px;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: $border_radius;
+    background-color: $light_transparent_color_4;
+    text-align: center;
+    padding: 8px 25px;
+    transition: all 0.2s;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
+    box-shadow: $light_shadow_hover;
+}
 
 // BODY INFO INFORMATION
 
@@ -1026,6 +1042,12 @@ html:not([data-scroll='0']) {
             color: white;
             background-color: $dark_color_4;
         }
+    }
+    #copy_alert {
+        background-color: $light_color_grey_2;
+        color: black;
+        box-shadow: $dark_shadow_hover_invert;
+        filter: invert(100%);
     }
     .social_container .social {
         &:hover {
