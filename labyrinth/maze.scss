@@ -1,0 +1,718 @@
+/*@media (prefers-color-scheme: dark) {
+    #start_game {
+        background-color: purple;
+    }
+}*/
+
+
+/*variables*/
+
+
+
+$border_width: 0px;
+$border_radius: 1px;
+$black_accent: #003262;
+$element_width: 15px;
+$con_font_size: 10px;
+$height: 40;
+$width: 60;
+$button_width: 500px;
+$difficulty_choices: 4;
+$control_width: 180px; //variable also exists in maze_answer
+$button_top: 10px;
+
+$start_menu_bottom: 70px;
+$difficulty_choice_height: 60px;
+
+
+
+$button_color: #5D9FD5;
+$button_color_hover: #7EB2DD;
+$button_color_active: #3C8CCD;
+
+
+
+/*Font Import*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rubik&display=swap');
+
+
+
+/*Basic Setup*/
+
+
+
+html {
+    overflow: hidden;
+}
+body {
+    background-color: #BABFD1;
+    animation: 50000ms ease-in-out infinite color-change;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.5;
+    color: black;
+    margin: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+//sets the glassmorphism glass class
+.glass {
+    background-clip: padding-box;
+    backdrop-filter: blur($element_width / 4);
+}
+// changing background color for body
+@keyframes color-change {
+    0% {
+      background-color: #c6cbdb;
+    }
+    25% {
+      background-color: #abaeb8;
+    }
+    50% {
+      background-color: #ccc9df;
+    }
+    75% {
+      background-color: #e2cdcd;
+    }
+    100% {
+        background-color: #c6cbdb;
+    }
+}
+
+
+
+/*Back Button*/
+
+
+
+#graphic_arrow { 
+    width: 32px; //2em; 
+    height: 32px; //2em; 
+    overflow: hidden;
+    background-size: 32px 32px; //2em 2em;
+    border: solid white 2px;
+    
+    transform: rotate(90deg);
+
+    background-image: url("arrow_white.png");
+
+    border-radius: 50%;
+    
+
+    transition: transform 0.2s, background-color 0.7s;
+    transition-timing-function: ease;
+
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+#graphic_arrow:hover {
+    background-color: #faad69;
+    transform: translate(-2px, 0px) rotate(90deg);
+}
+#graphic_arrow:active {
+    background-color: #e38b3d;
+    transform: translate(-5px, 0px) rotate(90deg);
+}
+#box_image {
+    margin: auto;
+    padding: $con_font_size;
+    position: -webkit-sticky;
+    position: sticky;
+
+    top: 0px;
+    float: left;
+}
+
+
+
+/*Start Menu*/
+
+
+
+//description of the game
+#description{
+    position: absolute;
+    left: 50%;
+    bottom: $start_menu_bottom + 130px + $difficulty_choice_height * 2;
+    width: $button_width;
+    transform: translate(-50%, 0);
+    //text
+    text-align: center;
+}
+
+//Button to start game (brings up difficult toggles)
+#start_game {
+    position: absolute;
+    bottom: $start_menu_bottom + 130px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: $button_width;
+    height: 60px;
+    //text
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    //stylistic  
+    background-color: #e33b3bd5;
+    //transition
+    transition: all 0.5s;
+    transition-timing-function: ease;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+#start_game:hover {
+    width: $button_width*1.015;
+    //text
+    line-height: 60px - 4px;
+    //stylistic
+    background-color: #ff6666d5;
+    border: solid 2px #cf3636;
+}
+#start_game:active {
+    width: $button_width/1.015;
+    //stylistic
+    background-color: #cf3636d5;
+    border: solid 2px #cf3636;
+}
+
+//difficulty: upper half (text itself)
+#choose_difficulty {
+    position: absolute;
+    bottom: $start_menu_bottom + 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: $button_width;
+    height: 40px;
+    //text
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 40px;
+    text-align: center;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    //stylistic
+    border-radius: 10px 10px 0 0;
+    background-color: #dad3d3ce;
+    //javascript
+    display: none;
+    //transition
+    transition: all 0.5s;
+    transition-timing-function: ease;
+}
+//difficulty: lower half (wrapper where choices present)
+#difficulty_wrapper{
+    position: absolute;
+    bottom: $start_menu_bottom;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: $button_width;
+    height: 60px;
+    //text
+    line-height: 60px;
+    text-align: center;
+    //stylistic
+    background-color: #dad3d3ce; //, 223, 223);//#ff9595;
+    border-radius: 0 0 10px 10px;
+    //javascript
+    display: none;
+}
+#difficulty {
+    width: $button_width/$difficulty_choices;
+    height: $difficulty_choice_height;
+    //stylistic
+    box-sizing: border-box;
+    //transition
+    transition: all 0.3s, border 0.1s;
+    transition-timing-function: ease;
+}
+#difficulty:hover {
+    width: $button_width/$difficulty_choices*2;
+    //text
+    line-height: $difficulty_choice_height - 2px;
+    //stylistic
+    border-radius: 10px;
+    
+    
+}
+#difficulty:active {
+    width: $button_width/$difficulty_choices*2/1.015;
+    //text
+    line-height: $difficulty_choice_height - 2px;
+    //stylistic
+    border-radius: 10px;
+}
+.difficulty_left{
+    //stylistic
+    border-radius: 0 0 0 10px;
+}
+.difficulty_right{
+    //stylistic
+    border-radius: 0 0 10px 0;
+}
+//sets the style of the difficulty choices when hovering/active
+.easy:hover{
+    background-color: #4cad4cce;
+    border: solid #3c8f3c 1px;
+}
+.easy:active{
+    background-color: #3c8f3cce;
+}
+
+.medium:hover{
+    background-color: #ffe550ce;
+    border: solid #ffd000 1px;
+}
+.medium:active{
+    background-color: #ffd000ce;
+}
+
+.hard:hover{
+    background-color: #e4635ace;
+    border: solid #ca4d44 1px;
+}
+.hard:active{
+    background-color: #ca4d44ce;
+}
+
+.impossible:hover{
+    background-color: #5e5e5ece;
+    border: solid #474747 1px;
+    color: #ececec;
+}
+.impossible:active{
+    background-color: #474747ce;
+    color: #ffffff;
+}
+
+
+
+/*GAMEPLAY Relevant: grid*/
+
+
+
+.gameplay {
+    width: $element_width * $width;
+    height: $element_width * $height;    
+}
+#gameplay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    //style, redundant but necessary
+    width: $element_width * $width;
+    height: $element_width * $height;  
+    //transition
+    transition: all 0.35s;
+    transition-timing-function: ease;
+}
+
+//contains all individual cells
+#grid {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;    
+    height: $element_width * $height;
+    width: $element_width * $width;
+    //stylistic
+    border: solid $black_accent $border_width;
+    border-radius: $border_radius * 2;
+}
+//basic style for all cells
+.grid div {
+    width: $element_width - (2*$border_width);
+    height: $element_width - (2*$border_width);
+    //stylistic
+    border: solid $black_accent $border_width;
+    //transition
+    transition-timing-function: ease;
+    transition: all 1s;
+}
+//forces player to appear faster
+.grid #player {
+    //transition
+    transition-timing-function: ease-in;
+    transition: all 0.05s;
+}
+//create border radius on gameplay corners (stylistic)
+.corner_TL{
+    border-radius: 100% 0 0 0;
+}
+.corner_TR{
+    border-radius: 0 100% 0 0;
+}
+.corner_BL{
+    border-radius: 0 0 0 100%;
+}
+.corner_BR{
+    border-radius: 0 0 100% 0;
+}
+
+
+
+/*Gameplay Relevant: other*/
+
+
+
+//if finish if off-screen, points to it
+#finish_pointer{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: $element_width;
+    width: $element_width;
+    //stylistic - image
+    background-size: $element_width $element_width;
+    background-image: url("arrow_white.png");
+    //stylistic
+    background-color: red;
+    border-top-left-radius: 0px;
+    border-radius: 50%;
+    //transition
+    transition: all 0.2s;
+    transition-timing-function: ease;
+    //javascript
+    opacity: 0;
+}
+//used to calcualte finish position
+#finish_Pos_Calc{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: $element_width;
+    width: $element_width;
+    display: none;
+}
+//used to calculate position of player
+#calcPlayer {
+    height: $element_width;
+    width: $element_width;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+
+
+/*Gameplay HUD*/
+
+
+
+
+//time until time runs out
+#timer{
+    position: absolute;
+    left: 12px + 32px + 12px + 12px; //200px;
+    top: 12px;
+    width: 250px;
+    height: 36px;
+    //text
+    font-size: 15px;
+    text-align: center;
+    line-height: 34px;
+    //stylistic
+    background-color: $button_color;
+    border-radius: 17.5px;
+    box-sizing: border-box;
+    border: solid 2px white;
+    //javascript
+    display: none;
+}
+//pop-up for when player wins or loses
+#win_lose_indicator {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: fit-content;
+    padding: 10px 80px 10px 80px;
+    //text
+    font-size: 45px;
+    //stylistic
+    border-radius: 10px;
+    transform: translate(-50%, 0) rotate(-15deg);
+    background-color: #d33737da;
+    //javascript
+    display: none;
+}
+
+
+
+/*Gameplay HUD - Give Up*/
+
+
+
+//upper-right blue button that says "Give Up" (click will ask for confirmation/hide confirmation)
+#showAnswer{
+    z-index: 90 !important;
+    position: absolute;
+    top: $button_top;
+    right: $button_top;
+    height: $control_width/3;
+    width: $control_width/3;
+    //text
+    text-align: center;
+    line-height: $control_width/3;
+    font-size: 13px;
+    //stylistic
+    box-sizing: border-box;
+    background-color: $button_color;
+    border-radius: 50%;
+    //transition
+    transition: all 0.2s;
+    transition-timing-function: ease;
+    //javascript
+    display: none;
+}
+#showAnswer:hover{
+    background-color: $button_color_hover;
+    border: solid 1px $button_color_active;
+    line-height: $control_width/3 - 2px;
+}
+#showAnswer:active{
+    background-color: $button_color_active;
+    border: solid 1px $button_color_active;
+}
+//upper-right pink button that confirms "Give Up"
+#confirmShowAnswer {
+    position: absolute;
+    top: $button_top + ($control_width/3 - $control_width/4)/2;
+    right: $button_top + $control_width/6;
+    height: $control_width/4;
+    //text
+    font-weight: 900;
+    line-height: $control_width/4;
+    //stylistic
+    background-image:linear-gradient(to right, #db6f9ece, #db6f9ece, #db6f9ece, #db6f9e00);
+    border-radius: $control_width/3 0% 0% $control_width/3;
+    //transition
+    transition: all 0.3s;
+    transition-timing-function: ease;
+    //javascript
+    width: 0px;
+}
+#confirmShowAnswer:hover {
+    background-image:linear-gradient(to right, #ee94bbce, #ee94bbce, #ee94bbce, #ee94bb00);
+}
+#confirmShowAnswer:active {
+    background-image:linear-gradient(to right, #d35d90ce, #d35d90ce, #d35d90ce, #d35d9000);
+}
+
+
+
+/*Gameplay HUD - Legend*/
+
+
+
+// button that (when clicked) shows the legend
+#showLegend{
+    z-index: 90 !important;
+    position: absolute;
+    top: $button_top*2 + $control_width/3;
+    right: $button_top;
+    height: $control_width/3;
+    width: $control_width/3;
+    //text
+    text-align: center;
+    line-height: $control_width/3;
+    //stylistic
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: $button_color;
+    //transition
+    transition: all 0.2s;
+    transition-timing-function: ease;
+    //javascript
+    display: none;
+}
+#showLegend:hover{
+    //text
+    line-height: $control_width/3 - 2px;
+    //stylistic
+    background-color: $button_color_hover;
+    border: solid 1px $button_color_active;
+}
+#showLegend:active{
+    //text
+    line-height: $control_width/3 - 2px;
+    //stylistic
+    background-color: $button_color_active;
+    border: solid 1px $button_color_active;
+}
+
+//the buttons that (when hovered over) show what the colors correspond to
+.legend_color{
+    z-index: 1;
+    position: absolute;
+    right: $button_top + ($control_width/3 - $element_width*2)/2;
+    top: $control_width/3 + $button_top * 2 + ($control_width/3 - $control_width/4)/2;
+    height: $element_width*2;
+    width: $element_width*2;
+    //stylistic
+    border-radius: 50%;
+    //transition
+    transition: all 0.3s;
+    transition-timing-function: ease;
+    //javasscript
+    opacity: 0;
+}
+//stylistic, the legend colors (no text)
+#legend_start{
+    background-color: rgb(22, 161, 22);
+}
+#legend_end{
+    background-color: rgb(255, 30, 30);
+}
+#legend_position{
+    background-color: #ff5ca0;
+}
+//the text that appears when .legend_color is hovered over
+.legend_text{
+    position: absolute;
+    right: $button_top + ($control_width/3 - $element_width*2)/2 + $element_width/2;
+    padding-right: 20px + $element_width;
+    padding-left: 20px;
+    height: $element_width*2;
+    //text
+    line-height: $element_width*2;
+    text-align: right;
+    //stylistic
+    border-radius: $element_width 0 0 $element_width;
+    //transition
+    transition: all 0.2s;
+    transition-timing-function: linear;
+    //javascript
+    opacity: 0;
+}
+// specific style and position for the legend_text
+#legend_text_start{
+    top: $button_top*3 + ($control_width/3)*2;
+    background-image:linear-gradient(to right, #60c960, #60c960, #60c960, #60c960, #60c96000);
+}
+#legend_text_end{
+    top: $button_top*3 + ($control_width/3)*2 + $element_width*2;
+    background-image:linear-gradient(to right, #fd8585, #fd8585, #fd8585, #fd8585, #fd858500);
+}
+#legend_text_position{
+    top: $button_top*3 + ($control_width/3)*2 + $element_width*4;
+    background-image:linear-gradient(to right, #ff97c2, #ff97c2, #ff97c2, #ff97c2, #ff97c200);
+}
+// the text about the goals of the game
+#legend_description {
+    position: absolute;
+    right: $button_top + $control_width/6;
+    top: $control_width/3 + $button_top * 2 + ($control_width/3 - $control_width/4)/2;
+    height: $control_width/4;
+    //text
+    line-height: $control_width/4;
+    font-weight: 900;
+    text-orientation: mixed;
+    //stylistic
+    background-image:linear-gradient(to right, #fad4c0ce, #fad4c0ce, #fad4c0ce, #fad4c0ce, #fad4c000);
+    color: black;
+    border-radius: $control_width/3 0 0 $control_width/3;
+    //transition
+    transition: all 0.2s;
+    transition-timing-function: ease;
+    //javascript
+    width: 0px;
+}
+
+
+
+/*Gameplay HUD - Controls*/
+
+
+
+//the wrapper for all the control buttons
+#control {
+    z-index: 99 !important;
+    position: absolute;
+    height: $control_width;
+    width: $control_width;
+    display: flex;
+    flex-wrap: wrap;
+    right: 50px;
+    bottom: 50px;
+    //javascript
+    display: none;
+}
+//sets the dimensions of the individual control areas
+#control_div {
+    height: $control_width / 3;
+    width: $control_width / 3;
+}
+//specifies which control divs are actual buttons
+.control_button {
+    overflow: hidden;
+    //stylistic
+    background-image: url("arrow_white.png");
+    background-position: center;
+    background-size: $control_width / 3 $control_width / 3;
+    opacity: 0.6;
+    border-radius: $control_width / 6;
+    //transition
+    transition: transform 0.2s, background-color 0.7s, opacity 0.2s;
+    transition-timing-function: ease;   
+}
+.control_button:hover {
+    opacity: 0.9;
+    background-size: $control_width / 2.8 $control_width / 2.8;
+}
+.control_button:active {
+    opacity: 0.98;
+    background-size: $control_width / 3.1 $control_width / 3.1;
+}
+//rotates the arrows to point in the proper direction
+.control_up {
+    transform: rotate(180deg);
+}
+.control_left {
+    transform: rotate(90deg);
+}
+.control_right {
+    transform: rotate(-90deg);
+}
+.control_down {
+    transform: rotate(0deg);
+}
+.control_up:hover {
+    transform: translate(0px, -2px) rotate(180deg);
+}
+.control_up:active {
+    transform: translate(0px, -5px) rotate(180deg);
+}
+.control_left:hover {
+    transform: translate(-2px, 0px) rotate(90deg);
+}
+.control_left:active {
+    transform: translate(-5px, -2px) rotate(90deg);
+}
+.control_right:hover {
+    transform: translate(2px, 0px) rotate(-90deg);
+}
+.control_right:active {
+    transform: translate(5px, -2px) rotate(-90deg);
+}
+.control_down:hover {
+    transform: translate(0px, 2px) rotate(0deg);
+}
+.control_down:active {
+    transform: translate(0px, 5px) rotate(0deg);
+}
+

@@ -1,0 +1,694 @@
+/*@media (prefers-color-scheme: dark) {
+    #start_game {
+        background-color: purple;
+    }
+}*/
+/*variables*/
+/*Font Import*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Rubik&display=swap");
+/*Basic Setup*/
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: #BABFD1;
+  -webkit-animation: 50000ms ease-in-out infinite color-change;
+          animation: 50000ms ease-in-out infinite color-change;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.5;
+  color: black;
+  margin: 0px;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.glass {
+  background-clip: padding-box;
+  -webkit-backdrop-filter: blur(3.75px);
+          backdrop-filter: blur(3.75px);
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    background-color: #c6cbdb;
+  }
+  25% {
+    background-color: #abaeb8;
+  }
+  50% {
+    background-color: #ccc9df;
+  }
+  75% {
+    background-color: #e2cdcd;
+  }
+  100% {
+    background-color: #c6cbdb;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    background-color: #c6cbdb;
+  }
+  25% {
+    background-color: #abaeb8;
+  }
+  50% {
+    background-color: #ccc9df;
+  }
+  75% {
+    background-color: #e2cdcd;
+  }
+  100% {
+    background-color: #c6cbdb;
+  }
+}
+
+/*Back Button*/
+#graphic_arrow {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  background-size: 32px 32px;
+  border: solid white 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-image: url("arrow_white.png");
+  border-radius: 50%;
+  -webkit-transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.7s;
+  transition: transform 0.2s, background-color 0.7s, -webkit-transform 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+#graphic_arrow:hover {
+  background-color: #faad69;
+  -webkit-transform: translate(-2px, 0px) rotate(90deg);
+          transform: translate(-2px, 0px) rotate(90deg);
+}
+
+#graphic_arrow:active {
+  background-color: #e38b3d;
+  -webkit-transform: translate(-5px, 0px) rotate(90deg);
+          transform: translate(-5px, 0px) rotate(90deg);
+}
+
+#box_image {
+  margin: auto;
+  padding: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  float: left;
+}
+
+/*Start Menu*/
+#description {
+  position: absolute;
+  left: 50%;
+  bottom: 320px;
+  width: 500px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  text-align: center;
+}
+
+#start_game {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 500px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+  background-color: #e33b3bd5;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#start_game:hover {
+  width: 507.5px;
+  line-height: 56px;
+  background-color: #ff6666d5;
+  border: solid 2px #cf3636;
+}
+
+#start_game:active {
+  width: 492.61084px;
+  background-color: #cf3636d5;
+  border: solid 2px #cf3636;
+}
+
+#choose_difficulty {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 500px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 40px;
+  text-align: center;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  border-radius: 10px 10px 0 0;
+  background-color: #dad3d3ce;
+  display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#difficulty_wrapper {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 500px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #dad3d3ce;
+  border-radius: 0 0 10px 10px;
+  display: none;
+}
+
+#difficulty {
+  width: 125px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s, border 0.1s;
+  transition: all 0.3s, border 0.1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#difficulty:hover {
+  width: 250px;
+  line-height: 58px;
+  border-radius: 10px;
+}
+
+#difficulty:active {
+  width: 246.30542px;
+  line-height: 58px;
+  border-radius: 10px;
+}
+
+.difficulty_left {
+  border-radius: 0 0 0 10px;
+}
+
+.difficulty_right {
+  border-radius: 0 0 10px 0;
+}
+
+.easy:hover {
+  background-color: #4cad4cce;
+  border: solid #3c8f3c 1px;
+}
+
+.easy:active {
+  background-color: #3c8f3cce;
+}
+
+.medium:hover {
+  background-color: #ffe550ce;
+  border: solid #ffd000 1px;
+}
+
+.medium:active {
+  background-color: #ffd000ce;
+}
+
+.hard:hover {
+  background-color: #e4635ace;
+  border: solid #ca4d44 1px;
+}
+
+.hard:active {
+  background-color: #ca4d44ce;
+}
+
+.impossible:hover {
+  background-color: #5e5e5ece;
+  border: solid #474747 1px;
+  color: #ececec;
+}
+
+.impossible:active {
+  background-color: #474747ce;
+  color: #ffffff;
+}
+
+/*GAMEPLAY Relevant: grid*/
+.gameplay {
+  width: 900px;
+  height: 600px;
+}
+
+#gameplay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 900px;
+  height: 600px;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#grid {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 600px;
+  width: 900px;
+  border: solid #003262 0px;
+  border-radius: 2px;
+}
+
+.grid div {
+  width: 15px;
+  height: 15px;
+  border: solid #003262 0px;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.grid #player {
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition: all 0.05s;
+  transition: all 0.05s;
+}
+
+.corner_TL {
+  border-radius: 100% 0 0 0;
+}
+
+.corner_TR {
+  border-radius: 0 100% 0 0;
+}
+
+.corner_BL {
+  border-radius: 0 0 0 100%;
+}
+
+.corner_BR {
+  border-radius: 0 0 100% 0;
+}
+
+/*Gameplay Relevant: other*/
+#finish_pointer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 15px;
+  width: 15px;
+  background-size: 15px 15px;
+  background-image: url("arrow_white.png");
+  background-color: red;
+  border-top-left-radius: 0px;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  opacity: 0;
+}
+
+#finish_Pos_Calc {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 15px;
+  width: 15px;
+  display: none;
+}
+
+#calcPlayer {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/*Gameplay HUD*/
+#timer {
+  position: absolute;
+  left: 68px;
+  top: 12px;
+  width: 250px;
+  height: 36px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 34px;
+  background-color: #5D9FD5;
+  border-radius: 17.5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 2px white;
+  display: none;
+}
+
+#win_lose_indicator {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 80px 10px 80px;
+  font-size: 45px;
+  border-radius: 10px;
+  -webkit-transform: translate(-50%, 0) rotate(-15deg);
+          transform: translate(-50%, 0) rotate(-15deg);
+  background-color: #d33737da;
+  display: none;
+}
+
+/*Gameplay HUD - Give Up*/
+#showAnswer {
+  z-index: 90 !important;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #5D9FD5;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  display: none;
+}
+
+#showAnswer:hover {
+  background-color: #7EB2DD;
+  border: solid 1px #3C8CCD;
+  line-height: 58px;
+}
+
+#showAnswer:active {
+  background-color: #3C8CCD;
+  border: solid 1px #3C8CCD;
+}
+
+#confirmShowAnswer {
+  position: absolute;
+  top: 17.5px;
+  right: 40px;
+  height: 45px;
+  font-weight: 900;
+  line-height: 45px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#db6f9ece), color-stop(#db6f9ece), color-stop(#db6f9ece), to(#db6f9e00));
+  background-image: linear-gradient(to right, #db6f9ece, #db6f9ece, #db6f9ece, #db6f9e00);
+  border-radius: 60px 0% 0% 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  width: 0px;
+}
+
+#confirmShowAnswer:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ee94bbce), color-stop(#ee94bbce), color-stop(#ee94bbce), to(#ee94bb00));
+  background-image: linear-gradient(to right, #ee94bbce, #ee94bbce, #ee94bbce, #ee94bb00);
+}
+
+#confirmShowAnswer:active {
+  background-image: -webkit-gradient(linear, left top, right top, from(#d35d90ce), color-stop(#d35d90ce), color-stop(#d35d90ce), to(#d35d9000));
+  background-image: linear-gradient(to right, #d35d90ce, #d35d90ce, #d35d90ce, #d35d9000);
+}
+
+/*Gameplay HUD - Legend*/
+#showLegend {
+  z-index: 90 !important;
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #5D9FD5;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  display: none;
+}
+
+#showLegend:hover {
+  line-height: 58px;
+  background-color: #7EB2DD;
+  border: solid 1px #3C8CCD;
+}
+
+#showLegend:active {
+  line-height: 58px;
+  background-color: #3C8CCD;
+  border: solid 1px #3C8CCD;
+}
+
+.legend_color {
+  z-index: 1;
+  position: absolute;
+  right: 25px;
+  top: 87.5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  opacity: 0;
+}
+
+#legend_start {
+  background-color: #16a116;
+}
+
+#legend_end {
+  background-color: #ff1e1e;
+}
+
+#legend_position {
+  background-color: #ff5ca0;
+}
+
+.legend_text {
+  position: absolute;
+  right: 32.5px;
+  padding-right: 35px;
+  padding-left: 20px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  border-radius: 15px 0 0 15px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  opacity: 0;
+}
+
+#legend_text_start {
+  top: 150px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#60c960), color-stop(#60c960), color-stop(#60c960), color-stop(#60c960), to(#60c96000));
+  background-image: linear-gradient(to right, #60c960, #60c960, #60c960, #60c960, #60c96000);
+}
+
+#legend_text_end {
+  top: 180px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#fd8585), color-stop(#fd8585), color-stop(#fd8585), color-stop(#fd8585), to(#fd858500));
+  background-image: linear-gradient(to right, #fd8585, #fd8585, #fd8585, #fd8585, #fd858500);
+}
+
+#legend_text_position {
+  top: 210px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff97c2), color-stop(#ff97c2), color-stop(#ff97c2), color-stop(#ff97c2), to(#ff97c200));
+  background-image: linear-gradient(to right, #ff97c2, #ff97c2, #ff97c2, #ff97c2, #ff97c200);
+}
+
+#legend_description {
+  position: absolute;
+  right: 40px;
+  top: 87.5px;
+  height: 45px;
+  line-height: 45px;
+  font-weight: 900;
+  text-orientation: mixed;
+  background-image: -webkit-gradient(linear, left top, right top, from(#fad4c0ce), color-stop(#fad4c0ce), color-stop(#fad4c0ce), color-stop(#fad4c0ce), to(#fad4c000));
+  background-image: linear-gradient(to right, #fad4c0ce, #fad4c0ce, #fad4c0ce, #fad4c0ce, #fad4c000);
+  color: black;
+  border-radius: 60px 0 0 60px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  width: 0px;
+}
+
+/*Gameplay HUD - Controls*/
+#control {
+  z-index: 99 !important;
+  position: absolute;
+  height: 180px;
+  width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  right: 50px;
+  bottom: 50px;
+  display: none;
+}
+
+#control_div {
+  height: 60px;
+  width: 60px;
+}
+
+.control_button {
+  overflow: hidden;
+  background-image: url("arrow_white.png");
+  background-position: center;
+  background-size: 60px 60px;
+  opacity: 0.6;
+  border-radius: 30px;
+  -webkit-transition: background-color 0.7s, opacity 0.2s, -webkit-transform 0.2s;
+  transition: background-color 0.7s, opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.7s, opacity 0.2s;
+  transition: transform 0.2s, background-color 0.7s, opacity 0.2s, -webkit-transform 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.control_button:hover {
+  opacity: 0.9;
+  background-size: 64.28571px 64.28571px;
+}
+
+.control_button:active {
+  opacity: 0.98;
+  background-size: 58.06452px 58.06452px;
+}
+
+.control_up {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.control_left {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.control_right {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.control_down {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.control_up:hover {
+  -webkit-transform: translate(0px, -2px) rotate(180deg);
+          transform: translate(0px, -2px) rotate(180deg);
+}
+
+.control_up:active {
+  -webkit-transform: translate(0px, -5px) rotate(180deg);
+          transform: translate(0px, -5px) rotate(180deg);
+}
+
+.control_left:hover {
+  -webkit-transform: translate(-2px, 0px) rotate(90deg);
+          transform: translate(-2px, 0px) rotate(90deg);
+}
+
+.control_left:active {
+  -webkit-transform: translate(-5px, -2px) rotate(90deg);
+          transform: translate(-5px, -2px) rotate(90deg);
+}
+
+.control_right:hover {
+  -webkit-transform: translate(2px, 0px) rotate(-90deg);
+          transform: translate(2px, 0px) rotate(-90deg);
+}
+
+.control_right:active {
+  -webkit-transform: translate(5px, -2px) rotate(-90deg);
+          transform: translate(5px, -2px) rotate(-90deg);
+}
+
+.control_down:hover {
+  -webkit-transform: translate(0px, 2px) rotate(0deg);
+          transform: translate(0px, 2px) rotate(0deg);
+}
+
+.control_down:active {
+  -webkit-transform: translate(0px, 5px) rotate(0deg);
+          transform: translate(0px, 5px) rotate(0deg);
+}
+/*# sourceMappingURL=maze.css.map */

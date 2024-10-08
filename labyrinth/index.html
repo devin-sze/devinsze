@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>devinsze | labyrinth</title>
+        <link rel="stylesheet" href="maze.css">
+        <script src="maze_onLoad.js" charset="utf-8"></script>
+        <script src="maze_worldGen.js" charset="utf-8"></script>
+        <script src="maze_playerMove.js" charset="utf-8"></script>
+        <script src="maze_autoMove.js" charset="utf-8"></script>
+        <script src="maze_color.js" charset="utf-8"></script>
+        <script src="maze_answer.js" charset="utf-8"></script>
+        <script src="maze_winlose.js" charset="utf-8"></script>
+        <script src="maze_reposition.js" charset="utf-8"></script>
+        <script src="maze_legend.js" charset="utf-8"></script>
+        <script src="maze_clearCache.js" charset="utf-8"></script>
+
+    </head>
+    <body>
+        <!--Back Button-->    
+        
+        <a href="http://devinsze.com/codingprojects" title="Back to Coding Projects">
+            <div id="graphic_arrow"></div>
+        </a>
+
+        <!--Start Menu-->
+
+        <div id="description">
+            <h1>The Labyrinth: Race to the End</h1>
+            <p>How good are you at mazes, puzzles, labyrinths, and more? Try and reach the finish line before the computer does! The harder the difficulty, the faster and the computer and the less you see >:)</p>
+            <p>Control your position with WASD, the arrow keys, or the on-screen controls.</p>
+        </div>
+
+        <div class="glass" id="start_game" onclick="showDifficulty()">Start Game</div>
+        <div class="glass" id="choose_difficulty">Choose Difficulty</div>
+        <div class="glass" id="difficulty_wrapper">
+            <div class = "easy difficulty_left" id="difficulty" onclick="onLoad('easy')">easy</div>
+            <div class = "medium" id="difficulty" onclick="onLoad('medium')">medium</div>
+            <div class = "hard" id="difficulty" onclick="onLoad('hard')">hard</div>
+            <div class = "impossible difficulty_right" id="difficulty" onclick="onLoad('impossible')">impossible</div>
+        </div>
+
+        <!--Gameplay Relevant-->
+        <div class="gameplay" id="gameplay">
+            <div class="gridback" id="gridback"></div>
+            <div class="grid" id="grid"></div>    
+        </div>
+
+        <div id="finish_pointer"></div>
+        
+        <div id="finish_Pos_Calc"></div>
+        <div id="calcPlayer"></div>
+        
+        <!--Gameplay HUD-->
+
+        <div id="timer">Timer</div>
+        <div class="glass" id="win_lose_indicator"></div>
+        
+        <!--Gameplay HUD - Give Up-->
+        
+        <div id="showAnswer" onclick="askShowAnswer()">Give Up</div>
+        <div class="glass" id="confirmShowAnswer" onclick="showAnswer()"></div>
+
+        <!--Gameplay HUD - Legend-->
+
+        <div id="showLegend" onclick="showLegend()">?</div>
+
+        <div class="glass legend_color" id="legend_start" onmouseover="showElem('legend_text_start')" onmouseout="hideElem('legend_text_start')"></div>
+        <div class="glass legend_color" id="legend_end" onmouseover="showElem('legend_text_end')" onmouseout="hideElem('legend_text_end')"></div>
+        <div class="glass legend_color" id="legend_position" onmouseover="showElem('legend_text_position')" onmouseout="hideElem('legend_text_position')"></div>
+        <div class="glass legend_color" id="cover_legend_when_not_in_use"></div>
+        
+        <div class="glass legend_text" id="legend_text_start">Start</div>
+        <div class="glass legend_text" id="legend_text_end">Finish</div>
+        <div class="glass legend_text" id="legend_text_position">Player Position</div>
+
+        <div class="glass" id="legend_description"></div>
+
+        <!--Gameplay HUD - Controls-->
+
+        <div id="control">
+            <div id = "control_div"></div>
+            <div class = "control_button control_up" id = "control_div" onclick="control('up')"></div>
+            <div id = "control_div"></div>
+            <div class = "control_button control_left" id = "control_div" onclick="control('left')"></div>
+            <div id = "control_div"></div>
+            <div class = "control_button control_right" id = "control_div" onclick="control('right')"></div>
+            <div id = "control_div"></div>
+            <div class = "control_button control_down" id = "control_div" onclick="control('down')"></div>
+            <div id = "control_div"></div>
+        </div>
+
+    </body>
+</html>
