@@ -18,6 +18,7 @@ var y_bound_t = padding;
 var y_bound_b = container_y_bound - padding;
 
 var created = false;
+var creating = false;
 var shown = true; // if the text is shown
 var moving = false;
 var play_pause_on = false; // if mouse is on the play/pause button
@@ -79,9 +80,10 @@ window.addEventListener('resize', function(event) {
 
 
 function create_balls() {
-    if (created) {
+    if (creating || created) {
         return;
     }
+    creating = true;
 
     for (let i=0; i < ball_widths.length; i++) {
         ball = document.createElement('div')
