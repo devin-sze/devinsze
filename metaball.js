@@ -106,16 +106,12 @@ function create_balls() {
             // after delay, start moving the balls
             start_stop_balls();
         }, 2500)
-    } else {
-        setTimeout(() => {
-            // after delay, start moving the balls
-            start_stop_balls();
-        }, 7000)
     }
-    
 }
 
 // var xx =285
+
+
 
 
 
@@ -231,5 +227,12 @@ function play_pause_mouse() {
 
 
 
+if (isSafari) {
+    window.onload = function() {       
+        setTimeout(function(){
+            start_stop_balls();
+        },5000); 
+    }
+}
 
-// console.log(isSafari)
+
