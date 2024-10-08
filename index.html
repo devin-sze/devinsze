@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devinsze</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="metaball.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body onload="create_balls()">
+    
+    <!-- <div class="something">
+        <div class="stuff"></div>
+        <div class="thing"></div>
+    </div> -->
+    
+
+    <header class="header">
+        <a href="http://devinsze.com"><div class="logo_devin">
+            <div class="container" id="outer_container" onmouseenter="logo_hover()" onmouseleave="logo_hover()">
+                <div id="inner_container">
+                    <div id="d1"></div>
+                    <div id="d3"></div>
+                    <div id="s1"></div>
+                    <div id="s2"></div>
+                    <div id="s3"></div>
+                </div>
+            </div>
+        </div></a>
+        <div class="hamburger" onclick="manageHam()" onmouseover="hoverHam('onmouseover')" onmouseout="hoverHam('onmouseout')">
+            <div class="ham" id="ham1"></div>
+            <div class="ham" id="ham2"></div>
+            <div class="ham" id="ham3"></div>
+        </div>
+        <div id="nav_container">
+            <div class="nav curr">home</div>
+            <a href="http://devinsze.com/about/"><div class="nav">about</div></a>
+            <a href="http://devinsze.com/portfolio/"><div class="nav">portfolio</div></a>
+        </div>
+    </header>
+    <div id="nav_container_small">
+        <div class="nav_small curr">home</div>
+        <a href="http://devinsze.com/about/"><div class="nav_small">about</div></a>
+        <a href="http://devinsze.com/portfolio/"><div class="nav_small">portfolio</div></a>
+    </div>
+
+    <div id="buffer"></div>
+
+    <div id="ball_container_outer">
+        <div id="ball_container"></div>
+    </div>
+
+    <div id="play_pause" onclick="start_stop_balls()" onmouseenter="play_pause_mouse()" onmouseleave="play_pause_mouse()" title="play simulation">
+        <div id="pp1"></div>
+        <div id="pp2"></div>
+    </div>
+
+    <div id="front_page">
+        <div>
+            <h1>Devin Sze</h1>
+            <p>I am a Computer Science Master's at UC Davis researching machine learning and static ensemble pruning, with a background in data science, educcation, and computer security.</p>
+            <div class="social_container">
+                <a href="https://www.instagram.com/devinquiry/"><div class="social ig"></div></a>
+                <a href="https://www.linkedin.com/in/devin-sze/" title="LinkedIn"><div class="social ln"></div></a>
+                <!-- <div class="social mail" onclick="copyEmail()" onmouseover="askEmail()" onmouseout="resetEmail()"> -->
+                    <!-- <div class="social mail" onmouseover="askEmail()" onmouseout="resetEmail()"> -->
+                <div class="social mail" onmouseover="askEmail()" ontouchstart="askEmail()">
+                    <span class="glass" id="mail_arrow"></span>
+                    <span class="glass" id="mail_span">devin.sze@berkeley.edu</span> <!--copy to clipboard-->
+                    <!-- <input type="text" value="devin.sze@berkeley.edu" id="email_copy" style="display:none;"> -->
+                </div>
+                <a href="https://github.com/devin-sze"><div class="social git"></div></a>
+            </div>
+            <!-- <div id="email_popup">Copy to clipboard</div> -->
+        </div>
+    </div>
+
+
+    <div class="body_info">
+        <div class="body_label"><h2>About</h2></div>
+        <div class="container">
+            <div class="about">
+                <div id="bio">
+
+                    <p>I am a Computer Science Master's student at the University of California, Davis where I am researching machine learning, static ensemble pruning, and generative tiemseries models. I graduated from the University of California, Berkeley with a double major in Computer Science and Data Science with an emphasis in Business and Industrial Analytics.</p>
+                    <p>During summer 2023, I waws a machine learning intern at Nokia where I developed several generative ML models that learned the underlying sturcture of a dataset, then generated statistically-similar data. During summer 2022, I was a software engineer intern for Amazon Web Services (AWS) where I deployed proof-of-concept A/B Testing and Feature Flagging software packages that measured and analyzed the effectiveness of classification systems. I was also a researcher at the Berkeley Artificial Intelligence Research Lab where I work on the <a class="text_link" href="https://circles-consortium.github.io/about.html">CIRCLES initiative</a> to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning.</p>
+                    <p>I am a TA for <i>Programming and Problem Solving</i> at Davis, was a TA for <i>Foundations of Data Science</i> at Berkeley, and am a member of <i>Upsilon Pi Epsilon</i>, the international computer science honor society.</p>                        
+                </div>
+                <div id="interests">
+                    <h4>Interests</h4>
+                    <ul>
+                        <li>Generative ML</li>
+                        <li>Ensemble Pruning</li>
+                        <li>ML for Autonomous Transportation</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Simulation</li>
+                    </ul>
+                </div>
+                <div id="education">
+                    <h4>Education</h4>
+                    <ul>
+                        <li>University of California, Davis<h5>M.S. Computer Science</h5><h6>2023 - 2025</h6></li>
+                        <li>University of California, Berkeley<h5>B.A. Computer Science</h5><h5>B.A. Data Science</h5><h6>2019 - 2023</h6></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="body_label"><h2>Experiences</h2></div>
+        <div class="container">
+            <div class="carousel_container">
+                
+                
+                <div class="carousel">
+                    <img class="logo" src="logo_nokia.png" alt="Nokia">
+                    <div>Nokia</div>
+                    <h4>Machine Learning Intern</h4>
+                    <h6>May 2023 - Sep 2023</h6>
+                </div>
+                <div class="carousel">
+                    <img class="logo" src="logo_bair.png" alt="BAIR">
+                    <div>Berkeley Artificial Intelligence Research Lab</div>
+                    <h4>Research Intern</h4>
+                    <h6>Sep 2022 - May 2023</h6>
+                </div>
+                <!-- <div class="carousel">
+                    <img class="logo" src="logo_cdss.png" alt="CDSS">
+                    <div>UC Berkeley Division for Computing, Data Science, and Society</div>
+                    <h4>Course Staff</h4>
+                    <h6>Jun 2021 - Jun 2023</h6>
+                </div> -->
+                <div class="carousel">
+                    <img class="logo" src="logo_aws.png" alt="AWS">
+                    <div>Amazon Web Services</div>
+                    <h4>Software Engineer Intern</h4>
+                    <h6>May 2022 - Aug 2022</h6>
+                </div>
+                <a href="http://devinsze.com/about/#experience" class="carousel_more" onmouseover="arrowLeft(this)" onmouseout="arrowReset(this)">
+                    <h6 class="next_text">More Experiences</h6>
+                    <div class="left_arrow"></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="body_label"><h2>Projects</h2></div>
+        <div class="container">
+            <div class="carousel_container">
+                <a href="https://devpost.com/software/foxnote"><div class="carousel clickable">
+                    <h4>FoxNote</h4>
+                    <h6>Sep 2022</h6>
+                    <p>Note-taking assistant that transcribes and summarizes live audio</p>
+                </div></a>
+                <a href="http://devinsze.com/labyrinth/"><div class="carousel clickable">
+                    <h4>The Labyrinth</h4>
+                    <h6>Dec 2020 - Jan 2021</h6>
+                    <p>User-interactive maze with toggleable difficulty</p>
+                </div></a>
+                <a href="http://devinsze.com/metaballs/"><div class="carousel clickable">
+                    <h4>Metaballs</h4>
+                    <h6>Jan 2023</h6>
+                    <p>Simulating metaballs via constructive gaussian blur</p>
+                </div></a>
+                <a href="http://devinsze.com/shortestpath/"><div class="carousel clickable">
+                    <h4>Visualizing Shortest Path</h4>
+                    <h6>Dec 2020</h6>
+                    <p>Interactive visualization for shortest path algorithms</p>
+                </div></a>
+                <a href="http://devinsze.com/portfolio/#coding" class="carousel_more" onmouseover="arrowLeft(this)" onmouseout="arrowReset(this)">
+                    <h6 class="next_text">More Projects</h6>
+                    <div class="left_arrow"></div>
+                    <!-- <a href="http://devinsze.com/portfolio/"><div style="display: block; height: 100%;">
+                        <h6 class="next_text">More Projects</h6>
+                        <div class="left_arrow"></div>
+                    </div></a> -->
+                    
+                </a>
+                
+                
+                
+                <a href="http://devinsze.com/portfolio/"></a>
+            </div>
+        </div>
+
+        
+
+
+
+    </div>
+
+
+
+    <div id="footer">
+        Designed by Devin Sze | 2023
+    </div>
+
+    
+
+
+
+    
+
+    
+<!-- 
+    
+
+
+    <div class="container">
+        <div class="organization glass">
+            <div><img class="logo" src="logo_bair.png" alt="BAIR"></div>
+            <div>
+                <h3>Berkeley Artificial Intelligence Research Lab</h3>
+                <h5>Berkeley, California, United States</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Research Intern</h4> 
+                <h6>Sep 2022 - Present</h6>
+                <div class="link_container">
+                    <div class="link external"></div>
+                    <a href="https://apnews.com/article/technology-nashville-pollution-traffic-4962e01d3226685012f1919077be29d1"><div class="link ap" title="Associated Press article"></div></a>
+                    <div class="link more"></div>
+                    <div class="link more" title="something"></div>
+                </div>
+                <ul>
+                    <li>Worked on the CIRCLES initiative to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                    <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                    <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_cdss.png" alt="CDSS"></div>
+            <div>
+                <h3>UC Berkeley Division for Computing, Data Science, and Society</h3>
+                <h5>Berkeley, California, United States</h5>
+            </div>
+            <div>
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+            <div class="content">
+                <h4>Course Staff</h4>
+                <h6>Jun 2021 - Present</h6>
+                <ul>
+                    <li>Led lab sections twice weekly in Python fundamentals, data visualization, and machine learning</li>
+                    <li>Advised students in good programming practices & statistical comprehension during weekly office hours</li>
+                    <li>Counselled students in accomplishing academic goals by promoting inclusivity and advising them in their pursuit for higher domain knowledge</li>
+                </ul>
+            </div>
+            <div>
+                <div class="dot"></div>
+            </div>
+            <div class="content">
+                <h4>Graphics, Visuals, and Software Intern</h4>
+                <h6>Aug 2020 - Jul 2022</h6>
+                <ul>
+                    <li>Designed & developed (with JavaScript) the assignment portfolio for “Statistics 24” to showcase how visual variables affected data visualizations</li>
+                    <li>Maintained 5+ official UC Berkeley websites by updating content & resolving technical difficulties</li>
+                    <li>Facilitated data science internship enrichment programs, advising sessions, and career workshops</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_aws.png" alt="AWS"></div>
+            <div>
+                <h3>Amazon Web Services</h3>
+                <h5>San Jose, California, United States</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Software Engineer Intern</h4>
+                <h6>May 2022 - Aug 2022</h6>
+                <ul>
+                    <li>Deployed proof-of-concept A/B Testing and Feature Flagging software packages to measure and analyze the effectiveness of classification systems</li>
+                    <li>Prototyped Mturk (ML software division) software integration using AWS Lambda, API Gateway, and DynamoDB</li>
+                    <li>Designed application integration methods with AWS GRC2.0 user authentication tools</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_cal.png" alt="red"></div>
+            <div>
+                <h3>University of California, Berkeley</h3>
+                <h5>Berkeley, California, United States</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Undergraduate Researcher</h4>
+                <h6>Jan 2021 - May 2022</h6>
+                <ul>
+                    <li>Analyzed Euroscepticism in 25 years of EU oversight documentation to quantify policymaking bias in contemporary European politics</li>
+                    <li>Refined & created text-categorization algorithms for machine learning classification systems using Python & NLP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_sym.png" alt="sym"></div>
+            <div>
+                <h3>Symmetry Electronics · Internship</h3>
+                <h5>San Francisco Bay Area</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Engineering Intern</h4>
+                <h6>Mar 2019 - Jul 2019</h6>
+                <ul>
+                    <li>Symmetry Electronics is a subsidiary of Berkshire Hathaway and is a global semiconductor distributor</li>
+                    <li>Collaborated with management to streamline assembly code transfer onto 2000 data transmission modules</li>
+                    <li>Troubleshot faulty chips by running diagnostics & interpreting hardware signals to ensure proper wireless communication</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     -->
+
+
+<!-- 
+    <div class="experiences">
+        <div class="experience">
+            <div>
+                <img class="logo" src="red.png" alt="red">
+            </div>
+            <div>
+                <li>Berkeley Artificial Intelligence Research</li>
+                <ul>
+                    <li>Research Intern</li>
+                    <ul>
+                        <li>Worked on the CIRCLES initiative to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                        <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                        <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    
+
+
+<!-- 
+    <div class="experience">
+        <ul>
+            <li><img class="logo" src="red.png" alt="red"></li>
+            <li>Berkeley Artificial Intelligence Research</li>
+            <ul>
+                <li>Research Intern</li>
+                <ul>
+                    <li>Worked on the CIRCLES initiative to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                    <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                    <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                </ul>
+            </ul>
+            <li>UC Berkeley Division for Computing, Data Science, and Society</li>
+            <ul>
+                <li>Course Staff</li>
+                <ul>
+                    <li>Led lab sections twice weekly in Python fundamentals, data visualization, and machine learning</li>
+                    <li>Advised students in good programming practices & statistical comprehension during weekly office hours</li>
+                    <li>Counselled students in accomplishing academic goals by promoting inclusivity and advising them in their pursuit for higher domain knowledge</li>
+                </ul>
+                <li>Graphics, Visuals, and Software Intern</li>
+                <ul>
+                    <li>Designed & developed (with JavaScript) the assignment portfolio for “Statistics 24” to showcase how visual variables affected data visualizations</li>
+                    <li>Maintained 5+ official UC Berkeley websites by updating content & resolving technical difficulties</li>
+                    <li>Facilitated data science internship enrichment programs, advising sessions, and career workshops</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+     -->
+    <script src="home.js"></script>
+    <script src="metaball.js"></script>	
+    
+
+    
+    
+
+</body>
+</html>

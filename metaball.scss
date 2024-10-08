@@ -1,0 +1,119 @@
+
+// /*variables*/
+// $ball_container_x_bound: 100%;
+// $ball_container_y_bound: 100vh;
+// // $padding: 50px;
+
+// // $balls_light: blue; //red;
+// // $balls_dark: #c8ff00;
+
+// // $accent_light: #7F7FFF; // #FF7F7F;
+// // $accent_light_2: #9d9df2;
+// // $accent_light_3: #cecef3;
+
+// // $accent_dark: #6666e7; //#4d4dff;//#7f7fff;//#7FFFFF;
+// // $accent_dark_2: #5454ec; //#4d4dff;//#7f7fff;//#7FFFFF;
+// // $accent_dark_3: #3636ff; //#4d4dff;//#7f7fff;//#7FFFFF;
+
+
+// // $background_light: #b71414;
+// // $background_dark: rgb(102, 102, 102); //#4d4d4d; //#7F7F7F;
+
+
+
+
+
+// #ball_container {
+//     position: absolute;
+//     z-index: -1;
+//     top: 0px;
+//     background-color: white;
+//     width: $ball_container_x_bound;
+//     height: $ball_container_y_bound;
+//     filter: blur(15px) contrast(10000) opacity(50%) hue-rotate(315deg);
+//     mix-blend-mode: overlay;
+// }
+
+// .balls {
+//     position: absolute;
+//     display: block;
+//     background-color: blue;
+//     border-radius: 50%;
+//     transition: all 0.6s;
+//     transition-timing-function: linear;
+// }
+
+// #play_pause {
+//     position: absolute;
+//     height: 20px;
+//     width: 14px;
+//     bottom: 10px;
+//     left: 10px;
+//     padding: 0px;
+//     > div {
+//         height: 20px;
+//         width: 7px;
+//         background-color: black;
+//         transition: all 0.1s;
+//         transition-timing-function: linear;
+//     }
+//     > #pp1 {
+//         float: left;
+//         clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%);
+//     }
+//     > #pp2 {
+//         float: right;
+//         clip-path: polygon(0% 25%, 100% 50%, 100% 50%, 0% 75%);
+//     }
+// }
+
+
+
+// @media (prefers-color-scheme: dark) {
+//     #ball_container {
+//         background-color: black;
+//     }
+//     // #container {
+//     //     filter: blur(15px) contrast(10000) opacity(70%) invert(0.86);
+//     // }
+//     // #padding_extra {
+//     //     border: solid $padding $background_dark;
+//     // }
+//     // .balls {
+//     //     background-color: $balls_dark;
+//     // }
+//     // .content {
+//     //     background-color: $background_dark;
+//     // }
+//     // body, h2, p {
+//     //     color: white;
+//     // }
+//     // a {
+//     //     color: inherit;
+//     //     background-color: $accent_dark;
+//     //     &:hover {
+//     //         background-color: $accent_dark_2;
+//     //     }
+//     //     &:active {
+//     //         background-color: $accent_dark_3;
+//     //     }
+//     // }
+//     // #play_pause > div {
+//     //     background-color: white; //$accent_dark;
+//     // }
+//     // #text_view > div {
+//     //     background-color: white;
+//     // }
+// }
+
+
+
+// // // height: $left_arrow;
+// // // width: $left_arrow;
+// // // clip-path: polygon(0% 0%, $arrow_width 0%, 50%+$arrow_width 50%, $arrow_width 100%, 0% 100%, 50% 50%);
+// // // transform: translateX(0);
+// // // transition: all 0.5s;
+// // // transition-timing-function: ease-out;
+// // // }
+
+// // // // <path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z" id="ytp-id-103"></path>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devinsze | about</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="metaball.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- <div class="something">
+        <div class="stuff"></div>
+        <div class="thing"></div>
+    </div> -->
+    
+
+    <header class="header" id="top">
+        <a href="http://devinsze.com"><div class="logo_devin">
+            <div class="container" id="outer_container" onmouseenter="logo_hover()" onmouseleave="logo_hover()">
+                <div id="inner_container">
+                    <div id="d1"></div>
+                    <div id="d3"></div>
+                    <div id="s1"></div>
+                    <div id="s2"></div>
+                    <div id="s3"></div>
+                </div>
+            </div>
+        </div></a>
+        <div class="hamburger" onclick="manageHam()" onmouseover="hoverHam('onmouseover')" onmouseout="hoverHam('onmouseout')">
+            <div class="ham" id="ham1"></div>
+            <div class="ham" id="ham2"></div>
+            <div class="ham" id="ham3"></div>
+        </div>
+        <div id="nav_container">
+            <a href="http://devinsze.com"><div class="nav">home</div></a>
+            <div class="nav curr">about</div>
+            <a href="http://devinsze.com/portfolio/"><div class="nav">portfolio</div></a>
+        </div>
+    </header>
+    <div id="nav_container_small">
+        <a href="http://devinsze.com"><div class="nav_small">home</div></a>
+        <div class="nav_small curr">about</div>
+        <a href="http://devinsze.com/portfolio/"><div class="nav_small">portfolio</div></a>
+    </div>
+
+    <div id="buffer"></div>
+
+    
+
+    <div id="title_page">
+        <div>
+            <h1>About</h1>
+            <div id="section_container">
+                <a href="#education"><div class="section_select">Education</div></a>
+                <a href="#experience"><div class="section_select">Experiences</div></a>
+                <a href="#teaching"><div class="section_select">Teaching</div></a>
+                <a href="#organizations"><div class="section_select">Organizations & Service</div></a>
+                <a href="#awards"><div class="section_select">Awards & Mentions</div></a>
+                <a href="#skills"><div class="section_select">Skills</div></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="body_info">
+        <div class="body_label" id="education"><h2>Education</h2></div>
+        <div class="container">
+            <div class="organization with_logo glass">
+                <div><img class="logo" src="logo_davis.png" alt="davis"></div>
+                <div>
+                    <h3>University of California, Davis</h3>
+                    <h6>2023 - 2025</h6>
+                    <!-- <h5>Berkeley, California, United States</h5> -->
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>M.S. Computer Science</h4> 
+                    <ul>
+                        <li>GPA: 4.0 / 4.0</li>
+                        <li>Research on Machine Learning and Static Ensemble Pruning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="organization with_logo glass">
+                <div><img class="logo" src="logo_cal.png" alt="berkeley"></div>
+                <div>
+                    <h3>University of California, Berkeley</h3>
+                    <h6>2019 - 2023</h6>
+                    <!-- <h5>Berkeley, California, United States</h5> -->
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>B.A. Computer Science</h4> 
+                    <ul>
+                        <li>GPA: 3.8 / 4.0</li>
+                        <li>Dean's List</li>
+                    </ul>
+                    <h4>B.A. Data Science</h4> 
+                    <ul>
+                        <li>GPA: 3.8 / 4.0</li>
+                        <li>Emphasis in Business and Industrial Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="body_label" id="experience"><h2>Experience</h2></div>
+        
+        
+        
+        <div class="container">
+            <div class="organization with_logo glass">
+                <div><img class="logo" src="logo_apl.png" alt="JHU APL"></div>
+                <div>
+                    <h3>Johns Hopkins Applied Physics Lab</h3>
+                    <h5>Laurel, Maryland, United States</h5>
+                </div>
+                <div>
+                    <!-- <div class="dot"></div>
+                    <div class="line"></div> -->
+                </div>
+                <div class="content">
+                    <h4>Machine Learning Scientist Intern</h4> 
+                    <h6>June 2024 - Present</h6>
+                    <!-- <ul>
+                        <li>Created machine learning models that learned the underlying data structure of any dataset and generated statistically-similar synthetic data, with support for numerical, categorical, ordinal, and timeseries data</li>
+                        <li>Designed all models (GAN, VAE, VQ-VAE) to be user customizable and generalizable for any dataset</li>
+                        <li>Packaged the models to be used in router error detection in Nokia Bell Labs</li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo logo_do_white" src="logo_nokia.png" alt="Nokia"></div>
+                <div>
+                    <h3>Nokia</h3>
+                    <h5>Sunnyvale, California, United States</h5>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>AI Engineering Intern</h4> 
+                    <h6>Jan 2024 - Present</h6>
+                    <!-- <ul>
+                        <li>Created machine learning models that learned the underlying data structure of any dataset and generated statistically-similar synthetic data, with support for numerical, categorical, ordinal, and timeseries data</li>
+                        <li>Designed all models (GAN, VAE, VQ-VAE) to be user customizable and generalizable for any dataset</li>
+                        <li>Packaged the models to be used in router error detection in Nokia Bell Labs</li>
+                    </ul> -->
+                </div>
+                <div>
+                    <div class="dot"></div>
+                </div>
+                <div class="content">
+                    <h4>Machine Learning Intern</h4> 
+                    <h6>May 2023 - Sep 2023</h6>
+                    <!-- <div class="link_container">
+                        <a href="https://circles-consortium.github.io/about.html" title="CIRCLES Homepage"><div class="link external"></div></a>
+                        <a href="https://apnews.com/article/technology-nashville-pollution-traffic-4962e01d3226685012f1919077be29d1" title="AP Article"><div class="link ap" title="Associated Press article"></div></a>
+                        <a href="https://news.vanderbilt.edu/2022/11/23/ai-powered-cruise-control-system-may-pave-the-way-to-fuel-efficiency-and-traffic-relief/" title="Vanderbilt Article"><div class="link more"></div></a>
+                    </div> -->
+                    <ul>
+                        <li>Created machine learning models that learned the underlying data structure of any dataset and generated statistically-similar synthetic data, with support for numerical, categorical, ordinal, and timeseries data</li>
+                        <li>Designed all models (GAN, VAE, VQ-VAE) to be user customizable and generalizable for any dataset</li>
+                        <li>Packaged the models to be used in router error detection in Nokia Bell Labs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo logo_do_white" src="logo_bair.png" alt="BAIR"></div>
+                <div>
+                    <h3>Berkeley Artificial Intelligence Research Lab</h3>
+                    <h5>Berkeley, California, United States</h5>
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>Research Intern</h4> 
+                    <h6>Sep 2022 - Present</h6>
+                    <div class="link_container">
+                        <a href="https://circles-consortium.github.io/about.html" title="CIRCLES Homepage"><div class="link external"></div></a>
+                        <a href="https://apnews.com/article/technology-nashville-pollution-traffic-4962e01d3226685012f1919077be29d1" title="AP Article"><div class="link ap" title="Associated Press article"></div></a>
+                        <a href="https://news.vanderbilt.edu/2022/11/23/ai-powered-cruise-control-system-may-pave-the-way-to-fuel-efficiency-and-traffic-relief/" title="Vanderbilt Article"><div class="link more"></div></a>
+                    </div>
+                    <ul>
+                        <li>Worked on the <a class="text_link" href="https://circles-consortium.github.io/about.html">CIRCLES initiative</a> to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                        <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                        <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo logo_do_white" src="logo_cdss.png" alt="CDSS"></div>
+                <div>
+                    <h3>UC Berkeley Division for Computing, Data Science, and Society</h3>
+                    <h5>Berkeley, California, United States</h5>
+                </div>
+                <div>
+                    <!-- <div class="dot"></div> -->
+                    <!-- <div class="line"></div> -->
+                </div>
+                <div class="content">
+                    <h4>Graphics, Visuals, and Software Intern</h4>
+                    <h6>Aug 2020 - Jul 2022</h6>
+                    <!-- <div class="link_container">
+                        <div class="link external"></div>
+                    </div> -->
+                    <ul>
+                        <li>Designed & developed (with JavaScript) the assignment portfolio for <a class="text_link" href="https://deardata-sp21.github.io/">"Statistics 24"</a> to showcase how visual variables affected data visualizations</li>
+                        <li>Maintained 5+ official UC Berkeley websites by updating content & resolving technical difficulties</li>
+                        <li>Facilitated data science internship enrichment programs, advising sessions, and career workshops</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo logo_do_white" src="logo_aws.png" alt="AWS"></div>
+                <div>
+                    <h3>Amazon Web Services</h3>
+                    <h5>San Jose, California, United States</h5>
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>Software Engineer Intern</h4>
+                    <h6>May 2022 - Aug 2022</h6>
+                    <ul>
+                        <li>Deployed proof-of-concept A/B Testing and Feature Flagging software packages to measure and analyze the effectiveness of classification systems</li>
+                        <li>Prototyped Mturk (ML software division) software integration using AWS Lambda, API Gateway, and DynamoDB</li>
+                        <li>Designed application integration methods with AWS GRC2.0 user authentication tools</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo" src="logo_cal.png" alt="Berkeley"></div>
+                <div>
+                    <h3>University of California, Berkeley</h3>
+                    <h5>Berkeley, California, United States</h5>
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>Undergraduate Researcher</h4>
+                    <h6>Jan 2021 - May 2022</h6>
+                    <div class="link_container">
+                        <a href="https://escholarship.org/uc/item/30c4d81p#main" title="Research Paper"><div class="link pdf"></div></a>
+                    </div>
+                    <ul>
+                        <li>Analyzed Euroscepticism in 25 years of EU oversight documentation to quantify policymaking bias in contemporary European politics</li>
+                        <li>Refined & created text-categorization algorithms for machine learning classification systems using Python & NLP</li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo" src="logo_sym.png" alt="Symmetry"></div>
+                <div>
+                    <h3>Symmetry Electronics</h3>
+                    <h5>San Francisco Bay Area</h5>
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>Engineering Intern</h4>
+                    <h6>Mar 2019 - Jul 2019</h6>
+                    <ul>
+                        <li>Symmetry Electronics is a subsidiary of Berkshire Hathaway and is a global semiconductor distributor</li>
+                        <li>Collaborated with management to streamline assembly code transfer onto 2000 data transmission modules</li>
+                        <li>Troubleshot faulty chips by running diagnostics & interpreting hardware signals to ensure proper wireless communication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="body_label" id="teaching"><h2>Teaching</h2></div>
+        <div class="container">
+            <div class="organization with_logo glass">
+                <div><img class="logo" src="logo_davis_coe.png" alt="Davis COE"></div>
+                <div>
+                    <h3>UC Davis Electrical and Computer Engineering</h3>
+                    <h5>Davis, California, United States</h5>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>TA, Computer Organization & Machine-Dependent Programming</h4>
+                    <h6>Jan 2024 - Present</h6>
+                    <!-- <ul>
+                        <li>Led office hours for students by resolving coding issues and conceptual problems in C</li>
+                        <li>Edited, managed, and published lecture recordings and timestamps</li>
+                    </ul> -->
+                </div>
+                <div>
+                    <div class="dot"></div>
+                </div>
+                <div class="content">
+                    <h4>TA, Programming & Problem Solving</h4>
+                    <h6>Oct 2023 - Present</h6>
+                    <ul>
+                        <li>Led office hours for students by resolving coding issues and conceptual problems in C</li>
+                        <li>Edited, managed, and published lecture recordings and timestamps</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="organization with_logo glass">
+                <div><img class="logo logo_do_white" src="logo_cdss.png" alt="CDSS"></div>
+                <div>
+                    <h3>UC Berkeley Division for Computing, Data Science, and Society</h3>
+                    <h5>Berkeley, California, United States</h5>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>TA, Introduction to Data Science</h4>
+                    <h6>Aug 2022 - June 2023</h6>
+                    <div class="link_container">
+                        <a href="https://drive.google.com/drive/folders/1XxVsodkXQklFeaYGJQ-AAQT-YJmVEISf?usp=sharing" title="Material Slides"><div class="link pdf"></div></a>
+                    </div>
+                    <ul>
+                        <li>Led lab sections twice weekly in Python fundamentals, data visualization, and machine learning</li>
+                        <li>Advised students in good programming practices & statistical comprehension during weekly office hours</li>
+                        <li>Counselled students in accomplishing academic goals by promoting inclusivity and advising them in their pursuit for higher domain knowledge</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                </div>
+                <div class="content">
+                    <h4>Tutor, Introduction to Data Science</h4>
+                    <h6>June 2021 - June 2022</h6>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+        <div class="body_label" id="organizations"><h2>Organizations and Service</h2></div>
+        <div class="container">
+            
+            <div class="organization with_logo glass">
+                <div></div>
+                <div>
+                    <h3>Upsilon Pi Epsilon</h3>
+                </div>
+                <div>
+                </div>
+                <div class="content">
+                    <h4>General Member</h4> 
+                    <h6>Jan 2021 - Present</h6>
+                </div>
+            </div>
+            
+            <div class="organization with_logo glass">
+                <div></div>
+                <div>
+                    <h3>UC Berkeley College of Engineering</h3>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>Academic Intern, Data Structures</h4>
+                    <h6>Jan 2021 - Aug 2021</h6>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                </div>
+                <div class="content">
+                    <h4>Academic Intern, Computer Programs</h4>
+                    <h6>Jan 2021  May 2021</h6>
+                </div>
+            </div>
+            
+            <div class="organization with_logo glass">
+                <div></div>
+                <div>
+                    <h3>UC Berkeley Division for Computing, Data Science, and Society</h3>
+                </div>
+                <div></div>
+                <div class="content">
+                    <h4>Academic Intern, Introduction to Data Science</h4>
+                    <h6>Aug 2021 - June 2022</h6>
+                </div>
+            </div>
+
+
+            <div class="organization with_logo glass">
+                <div></div>
+                <div>
+                    <h3>Computer Science Mentors</h3>
+                </div>
+                <div></div>
+                <div class="content">
+                    <h4>Mentor, Discrete Mathematics</h4>
+                    <h6>Jan 2021 - Aug 2021</h6>
+                </div>
+            </div>
+
+            
+
+            <div class="organization with_logo glass">
+                <div></div>
+                <div>
+                    <h3>Asian American Association</h3>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>Senior Advisor</h4>
+                    <h6>Jan 2023 - June 2023</h6>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>President</h4>
+                    <h6>May 2022 - Dec 2022</h6>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="content">
+                    <h4>Director of Finance</h4>
+                    <h6>Aug 2021 - May 2022</h6>
+                </div>
+                <div>
+                    <div class="dot"></div>
+                </div>
+                <div class="content">
+                    <h4>Design Chair</h4>
+                    <h6>Aug 2021 - Dec 2021</h6>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="body_label" id="awards"><h2>Awards and Mentions</h2></div>
+        <div class="container">
+            <div class="organization glass">
+                <div><h3>Academic</h3></div>
+                <div class="content">
+                    <ul>
+                        <li>2023: <a class="text_link" href="https://lsadvising.berkeley.edu/policies/deans-listhonors">Dean's List</a>
+                        <li>2021: <a class="text_link" href="https://lsadvising.berkeley.edu/policies/deans-listhonors">Honors to Date</a></li>
+                        <li>2020: <a class="text_link" href="https://lsadvising.berkeley.edu/policies/deans-listhonors">Dean's List</a> and <a class="text_link" href="https://lsadvising.berkeley.edu/policies/deans-listhonors">Honors to Date</a></li>
+                        <li>2019: <a class="text_link" href="https://lsadvising.berkeley.edu/policies/deans-listhonors">Honors to Date</a></li>
+                        <li>2019: Seal of Biliteracy</li>
+                        <li>2019: AIME Qualifier</li>
+                        <li>2018: <a class="text_link" href="https://apcentral.collegeboard.org/exam-administration-ordering-scores/scores/awards/scholar-awards">National AP Scholar</a></li>
+                        <li>2018: National Forensic League: Degree of Distinction</li>
+                        <li>2018: National Merit Scholarship: Letter of Commendation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="organization glass">
+                <div><h3>Community Service</h3></div>
+                <div class="content">
+                    <ul>
+                        <li>2021: <a class="text_link" href="https://hr.berkeley.edu/compensation-benefits/compensation/recognition/spot-awards">Spot Award</a></li>
+                        <li>2019: <a class="text_link" href="https://alumni.berkeley.edu/get-involved/scholarships/">CAL Alumni Leadership Award</a></li>
+                        <li>2018: President's Volunteer Service Award: Bronze Level</li>
+                        <li>2018: Asian Pacific Islander American Public Affairs Scholarship</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="organization glass">
+                <div><h3>Speech and Debate</h3></div>
+                <div class="content">
+                    <ul>
+                        <li>2019: 19th in California — <i>Program Oral Interpretation</i></li>
+                        <li>2019: 9th Place at CFL State Qualifying Tournamen —  <i>Original Advocacy</i></li>
+                        <li>2019: Quarter Finalist at 2019 CAL Invitational — <i>Program Oral Interpretation</i></li>
+                        <li>2018: 3rd alternate (6th Place) in the National Qualifying Tournament — <i>Program Oral Interpretation</i></li>
+                        <li>2018: Quarter Finalist at 2018 CAL Invitational — <i>Program Oral Interpretation</i></li>
+                        <li>2018: Champion at Stephen Steward Middle and High School Invitational — <i>Original Prose Poetry</i></li>
+                        <li>2017: Champion at CFL Speech 2 Cupertino — <i>Thematic Interpretation</i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="body_label" id="skills"><h2>Skills</h2></div>
+        <div class="container">
+            <div class="organization glass">
+                <div><h3>Languages</h3></div>
+                <div class="content_cols">
+                    <div>
+                        <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                            <li>C#</li>
+                            <li>HTML</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>CSS & SCSS</li>
+                            <li>React.JS</li>
+                            <li>Node.JS</li>
+                            <li>PHP</li>
+                            <li>GoLang (Go)</li>
+                            <li>Risc-V</li>
+                            <li>LateX</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="organization glass">
+                <div><h3>Frameworks and Tools</h3></div>
+                <div class="content_cols">
+                    <div>
+                        <ul>
+                            <li>AWS Lambda</li>
+                            <li>AWS API Gateway</li>
+                            <li>AWS DynamoDB</li>
+                            <li>AWS Identity And Access Management (IAM)</li>
+                            <li>AWS Config</li>
+                            <li>NumPy</li>
+                            <li>Pandas</li>
+                            <li>FastAI</li>
+                            <li>Scikit-learn</li>
+                            <li>Tensorflow</li>
+                            <li>Data Structures and Algorithms</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>NoSQL</li>
+                            <li>Open API</li>
+                            <li>Git</li>
+                            <li>Regex</li>
+                            <li>Seaborn & Matplotlib</li>
+                            <li>LangDetect</li>
+                            <li>Figma</li>
+                            <li>Adobe Suite</li>
+                            <li>Microsoft Suite</li>
+                            <li>Tableau</li>
+                            <li>Jupyter Notebook</li>
+                            <li>Adobe Creative Cloud</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div id="to_top_container" onclick="scrollToTop();" onmouseenter="manage_to_top('onmouseenter')" onmouseleave="manage_to_top('onmouseleave')">
+        <div id="to_top"></div>
+    </div></a>
+
+
+
+    <div id="footer">
+        Designed by Devin Sze | 2023
+    </div>
+
+    
+
+
+
+    
+
+    
+<!-- 
+    
+
+
+    <div class="container">
+        <div class="organization glass">
+            <div><img class="logo" src="logo_bair.png" alt="BAIR"></div>
+            <div>
+                <h3>Berkeley Artificial Intelligence Research Lab</h3>
+                <h5>Berkeley, California, United States</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Research Intern</h4> 
+                <h6>Sep 2022 - Present</h6>
+                <div class="link_container">
+                    <div class="link external"></div>
+                    <a href="https://apnews.com/article/technology-nashville-pollution-traffic-4962e01d3226685012f1919077be29d1"><div class="link ap" title="Associated Press article"></div></a>
+                    <div class="link more"></div>
+                    <div class="link more" title="something"></div>
+                </div>
+                <ul>
+                    <li>Worked on the CIRCLES initiative to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                    <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                    <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_cdss.png" alt="CDSS"></div>
+            <div>
+                <h3>UC Berkeley Division for Computing, Data Science, and Society</h3>
+                <h5>Berkeley, California, United States</h5>
+            </div>
+            <div>
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+            <div class="content">
+                <h4>Course Staff</h4>
+                <h6>Jun 2021 - Present</h6>
+                <ul>
+                    <li>Led lab sections twice weekly in Python fundamentals, data visualization, and machine learning</li>
+                    <li>Advised students in good programming practices & statistical comprehension during weekly office hours</li>
+                    <li>Counselled students in accomplishing academic goals by promoting inclusivity and advising them in their pursuit for higher domain knowledge</li>
+                </ul>
+            </div>
+            <div>
+                <div class="dot"></div>
+            </div>
+            <div class="content">
+                <h4>Graphics, Visuals, and Software Intern</h4>
+                <h6>Aug 2020 - Jul 2022</h6>
+                <ul>
+                    <li>Designed & developed (with JavaScript) the assignment portfolio for “Statistics 24” to showcase how visual variables affected data visualizations</li>
+                    <li>Maintained 5+ official UC Berkeley websites by updating content & resolving technical difficulties</li>
+                    <li>Facilitated data science internship enrichment programs, advising sessions, and career workshops</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_aws.png" alt="AWS"></div>
+            <div>
+                <h3>Amazon Web Services</h3>
+                <h5>San Jose, California, United States</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Software Engineer Intern</h4>
+                <h6>May 2022 - Aug 2022</h6>
+                <ul>
+                    <li>Deployed proof-of-concept A/B Testing and Feature Flagging software packages to measure and analyze the effectiveness of classification systems</li>
+                    <li>Prototyped Mturk (ML software division) software integration using AWS Lambda, API Gateway, and DynamoDB</li>
+                    <li>Designed application integration methods with AWS GRC2.0 user authentication tools</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_cal.png" alt="red"></div>
+            <div>
+                <h3>University of California, Berkeley</h3>
+                <h5>Berkeley, California, United States</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Undergraduate Researcher</h4>
+                <h6>Jan 2021 - May 2022</h6>
+                <ul>
+                    <li>Analyzed Euroscepticism in 25 years of EU oversight documentation to quantify policymaking bias in contemporary European politics</li>
+                    <li>Refined & created text-categorization algorithms for machine learning classification systems using Python & NLP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="organization glass">
+            <div><img class="logo" src="logo_sym.png" alt="sym"></div>
+            <div>
+                <h3>Symmetry Electronics · Internship</h3>
+                <h5>San Francisco Bay Area</h5>
+            </div>
+            <div>
+            </div>
+            <div class="content">
+                <h4>Engineering Intern</h4>
+                <h6>Mar 2019 - Jul 2019</h6>
+                <ul>
+                    <li>Symmetry Electronics is a subsidiary of Berkshire Hathaway and is a global semiconductor distributor</li>
+                    <li>Collaborated with management to streamline assembly code transfer onto 2000 data transmission modules</li>
+                    <li>Troubleshot faulty chips by running diagnostics & interpreting hardware signals to ensure proper wireless communication</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     -->
+
+
+<!-- 
+    <div class="experiences">
+        <div class="experience">
+            <div>
+                <img class="logo" src="red.png" alt="red">
+            </div>
+            <div>
+                <li>Berkeley Artificial Intelligence Research</li>
+                <ul>
+                    <li>Research Intern</li>
+                    <ul>
+                        <li>Worked on the CIRCLES initiative to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                        <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                        <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    
+
+
+<!-- 
+    <div class="experience">
+        <ul>
+            <li><img class="logo" src="red.png" alt="red"></li>
+            <li>Berkeley Artificial Intelligence Research</li>
+            <ul>
+                <li>Research Intern</li>
+                <ul>
+                    <li>Worked on the CIRCLES initiative to develop a smart cruise controller for self-driving cars to reduce traffic congestion and improve fuel efficiency using deep reinforcement learning</li>
+                    <li>Developed a dashboard to visualize live traffic data, vehicle positions, and optimal anticipatory speeds</li>
+                    <li>Synthesized vehicle-based and highway-overview data to increase traffic profile accuracy and optimal vehicle speed precision</li>
+                </ul>
+            </ul>
+            <li>UC Berkeley Division for Computing, Data Science, and Society</li>
+            <ul>
+                <li>Course Staff</li>
+                <ul>
+                    <li>Led lab sections twice weekly in Python fundamentals, data visualization, and machine learning</li>
+                    <li>Advised students in good programming practices & statistical comprehension during weekly office hours</li>
+                    <li>Counselled students in accomplishing academic goals by promoting inclusivity and advising them in their pursuit for higher domain knowledge</li>
+                </ul>
+                <li>Graphics, Visuals, and Software Intern</li>
+                <ul>
+                    <li>Designed & developed (with JavaScript) the assignment portfolio for “Statistics 24” to showcase how visual variables affected data visualizations</li>
+                    <li>Maintained 5+ official UC Berkeley websites by updating content & resolving technical difficulties</li>
+                    <li>Facilitated data science internship enrichment programs, advising sessions, and career workshops</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+     -->
+    <script src="home.js"></script>
+    <!-- <script src="metaball.js"></script>	 -->
+    
+
+    
+    
+
+</body>
+</html>
