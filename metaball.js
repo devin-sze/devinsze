@@ -29,7 +29,24 @@ var ball_dy = [-2, 12, 10/2, -40/2, -20/2, 25/2, -13/2, 24/2, 15/2, -3/2]
 // var ball_top = [-1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000]
 
 
+
+
+// display variables
 var gridDisplay = document.getElementById("ball_container");
+
+var DARK_MODE = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+var light_transparent_color_3 = "#afafafc0"; //808080";
+var light_color_grey_1 = "#808080";
+var light_color_line = "#dddddd";
+
+var hover_color = light_color_grey_1;
+var original_color = light_transparent_color_3;
+if (DARK_MODE) {
+    hover_color = light_color_line;
+    original_color = light_transparent_color_3;
+}
+
+
 
 
 
@@ -59,7 +76,6 @@ window.addEventListener('resize', function(event) {
 
 
 function create_balls() {
-    // return;
     if (created) {
         return;
     }
@@ -85,19 +101,50 @@ function create_balls() {
     setTimeout(() => {
         // after delay, start moving the balls
         start_stop_balls();
-    }, 1000)
+    }, 2500)
 }
 
 // var xx =285
 
+
+
+
+function start_stop_balls() {
+    if (moving) {
+        // if currently moving, stop movement
+        moving = !moving;
+        document.getElementById("play_pause").title = "play simulation";
+        document.getElementById("pp1").style.clipPath = "polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%)";
+        document.getElementById("pp2").style.clipPath = "polygon(0% 25%, 100% 50%, 100% 50%, 0% 75%)";
+    } else {
+        // if not currently moving, start movement
+        moving = !moving;
+        document.getElementById("play_pause").title = "pause simulation";
+        document.getElementById("pp1").style.clipPath = "polygon(0% 10%, 50% 10%, 50% 90%, 0% 90%)";
+        document.getElementById("pp2").style.clipPath = "polygon(50% 10%, 100% 10%, 100% 90%, 50% 90%)";
+        continuous_balls();
+    }
+}
+
+
+// https://stackoverflow.com/questions/5226285/settimeout-in-for-loop-does-not-print-consecutive-values
+
+// continouosly move the balls (unless `moving` global variable is set to false) 
+function continuous_balls() {
+    var iters = INF;
+    var delay = 400;
+
+    (function myLoop(i) {
+        setTimeout(function() {
+            if (!moving) return;
+            move_balls();
+            if (--i) myLoop(i);
+        }, delay)
+    })(iters);
+}
+
 function move_balls() {
-    // move all balls
-    // console.log(xx);
-    // document.getElementById("ball_container").style = "filter: blur(15px) contrast(10000) opacity(50%) hue-rotate(" + xx + "deg);";
-    // xx+=1;
-    
-
-
+    // move the balls
     for (i=0; i<ball_widths.length; i++) {
         move_ball(i);
     }
@@ -105,6 +152,7 @@ function move_balls() {
 
 
 function move_ball(i) {
+    // move one ball
     var b_id = "b" + String(i)
 
     // get bounds
@@ -155,56 +203,9 @@ function move_ball(i) {
 
 
 
-function start_stop_balls() {
-    if (moving) {
-        // if currently moving, stop movement
-        moving = !moving;
-        document.getElementById("play_pause").title = "play simulation";
-        document.getElementById("pp1").style.clipPath = "polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%)";
-        document.getElementById("pp2").style.clipPath = "polygon(0% 25%, 100% 50%, 100% 50%, 0% 75%)";
-    } else {
-        // if not currently moving, start movement
-        moving = !moving;
-        document.getElementById("play_pause").title = "pause simulation";
-        document.getElementById("pp1").style.clipPath = "polygon(0% 10%, 50% 10%, 50% 90%, 0% 90%)";
-        document.getElementById("pp2").style.clipPath = "polygon(50% 10%, 100% 10%, 100% 90%, 50% 90%)";
-        continuous_balls();
-    }
-}
-
-
-// https://stackoverflow.com/questions/5226285/settimeout-in-for-loop-does-not-print-consecutive-values
-
-// continouosly move the balls (unless `moving` global variable is set to false) 
-function continuous_balls() {
-    var iters = INF;
-    var delay = 400;
-
-    (function myLoop(i) {
-        setTimeout(function() {
-            if (!moving) return;
-            move_balls();
-            if (--i) myLoop(i);
-        }, delay)
-    })(iters);
-}
-
-
-var DARK_MODE = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-var light_transparent_color_3 = "#afafafc0"; //808080";
-var light_color_grey_1 = "#808080";
-var light_color_line = "#dddddd";
-
-var hover_color = light_color_grey_1;
-var original_color = light_transparent_color_3;
-if (DARK_MODE) {
-    hover_color = light_color_line;
-    original_color = light_transparent_color_3;
-}
-
 
 function play_pause_mouse() {
-    console.log("!!!");
+    // console.log("!!!");
     if (play_pause_on) {
         document.getElementById("pp1").style.backgroundColor = original_color; 
         document.getElementById("pp2").style.backgroundColor = original_color;
