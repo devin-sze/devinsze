@@ -30,6 +30,9 @@ var ball_dy = [-2, 12, 10/2, -40/2, -20/2, 25/2, -13/2, 24/2, 15/2, -3/2]
 
 
 
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+
 
 // display variables
 var gridDisplay = document.getElementById("ball_container");
@@ -98,10 +101,18 @@ function create_balls() {
     }
     created = true;
     // return;
-    setTimeout(() => {
-        // after delay, start moving the balls
-        start_stop_balls();
-    }, 2500)
+    if (!isSafari) {
+        setTimeout(() => {
+            // after delay, start moving the balls
+            start_stop_balls();
+        }, 2500)
+    } else {
+        setTimeout(() => {
+            // after delay, start moving the balls
+            start_stop_balls();
+        }, 7000)
+    }
+    
 }
 
 // var xx =285
@@ -219,5 +230,6 @@ function play_pause_mouse() {
 
 
 
-// var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+
 // console.log(isSafari)
