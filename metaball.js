@@ -123,12 +123,14 @@ function start_stop_balls() {
         // if currently moving, stop movement
         moving = !moving;
         document.getElementById("play_pause").title = "play simulation";
+        document.getElementById("play_pause_alert").innerHTML = "Play Animation";
         document.getElementById("pp1").style.clipPath = "polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%)";
         document.getElementById("pp2").style.clipPath = "polygon(0% 25%, 100% 50%, 100% 50%, 0% 75%)";
     } else {
         // if not currently moving, start movement
         moving = !moving;
         document.getElementById("play_pause").title = "pause simulation";
+        document.getElementById("play_pause_alert").innerHTML = "Pause Animation";
         document.getElementById("pp1").style.clipPath = "polygon(0% 10%, 50% 10%, 50% 90%, 0% 90%)";
         document.getElementById("pp2").style.clipPath = "polygon(50% 10%, 100% 10%, 100% 90%, 50% 90%)";
         continuous_balls();
