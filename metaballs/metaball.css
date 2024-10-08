@@ -1,0 +1,227 @@
+/*variables*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+}
+
+h1 {
+  font-size: calc(max(10vw, 40px));
+  margin-bottom: 20px;
+}
+
+p, li {
+  font-size: inherit;
+}
+
+a {
+  background-color: #cecef3;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+a:hover {
+  background-color: #9d9df2;
+}
+
+a:active {
+  background-color: #7F7FFF;
+  color: white;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  -webkit-filter: blur(15px) contrast(10000) opacity(50%);
+          filter: blur(15px) contrast(10000) opacity(50%);
+  mix-blend-mode: overlay;
+}
+
+.balls {
+  position: absolute;
+  display: block;
+  background-color: blue;
+  border-radius: 50%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+#padding_extra {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  border: solid 50px #FFFFFF;
+  height: 100vh;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 10px black;
+          box-shadow: 0px 0px 10px black;
+  color: inherit;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+#play_pause {
+  position: absolute;
+  height: 30px;
+  width: 21.2px;
+  bottom: 15px;
+  left: 15px;
+  padding: 5px 9.2px;
+}
+
+#play_pause > div {
+  height: 30px;
+  width: 10.6px;
+  background-color: black;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+#play_pause > #pp1 {
+  float: left;
+  -webkit-clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%);
+}
+
+#play_pause > #pp2 {
+  float: right;
+  -webkit-clip-path: polygon(0% 25%, 100% 50%, 100% 50%, 0% 75%);
+          clip-path: polygon(0% 25%, 100% 50%, 100% 50%, 0% 75%);
+}
+
+#text_view {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  bottom: 15px;
+  left: 60px;
+}
+
+#text_view > div {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+#text_view > #tv1 {
+  -webkit-clip-path: polygon(10% 10%, 70% 10%, 80% 0%, 90% 10%, 70% 30%, 60% 40%, 60% 40%, 10% 90%, 0% 80%, 40% 40%, 40% 30%, 10% 30%);
+          clip-path: polygon(10% 10%, 70% 10%, 80% 0%, 90% 10%, 70% 30%, 60% 40%, 60% 40%, 10% 90%, 0% 80%, 40% 40%, 40% 30%, 10% 30%);
+}
+
+#text_view > #tv2 {
+  -webkit-clip-path: polygon(60% 60%, 60% 90%, 40% 90%, 40% 80%);
+          clip-path: polygon(60% 60%, 60% 90%, 40% 90%, 40% 80%);
+}
+
+.content {
+  padding: 30px 10vw 100px 10vw;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.footer {
+  background-color: #7F7FFF;
+  margin: 0px;
+  padding: 50px 10vw;
+  color: white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.github {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background-image: url("github.png");
+  margin-right: 20px;
+  background-size: cover;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.github:hover {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.github:active {
+  background-color: #929292;
+}
+
+@media (prefers-color-scheme: dark) {
+  #container {
+    -webkit-filter: blur(15px) contrast(10000) opacity(70%) invert(0.86);
+            filter: blur(15px) contrast(10000) opacity(70%) invert(0.86);
+  }
+  #padding_extra {
+    border: solid 50px #666666;
+  }
+  .balls {
+    background-color: #c8ff00;
+  }
+  .content {
+    background-color: #666666;
+  }
+  body, h2, p {
+    color: white;
+  }
+  a {
+    color: inherit;
+    background-color: #6666e7;
+  }
+  a:hover {
+    background-color: #5454ec;
+  }
+  a:active {
+    background-color: #3636ff;
+  }
+  #play_pause > div {
+    background-color: white;
+  }
+  #text_view > div {
+    background-color: white;
+  }
+}
+/*# sourceMappingURL=metaball.css.map */

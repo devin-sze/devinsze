@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metaballs</title>
+    <link rel="stylesheet" href="metaball.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body onload="create_balls()">
+
+    <div id="container"></div>
+        
+    <div id="padding_extra">
+        <div>
+            <h1>Metaballs</h1>
+            approximation of the inverse-square law using constructive gaussian blur
+        </div>
+    </div>
+
+    <div id="play_pause" onclick="start_stop_balls()" title="play simulation">
+        <div id="pp1"></div>
+        <div id="pp2"></div>
+    </div>
+
+    <div id="text_view" onclick="hide_show_text()" title="hide text">
+        <div id="tv1"></div>
+        <div id="tv2"></div>
+    </div>
+
+    <div class="content">
+        <h2>Background</h2>
+        <p><a href="https://en.wikipedia.org/wiki/Metaballs">Metaballs</a> are organic isosurfaces that combine with nearby objects in organically smooth ways. They are often used in computer graphics and can be used to model surface tension in water droplets.</p>
+        <p>The bounds of a metaball are modeled by the inverse-square law. All the equations of all the component balls are added together to form a falloff function. An arbitrary threshold value is chosen (typically 1); points that are less than the threshold are considered “outside” the metaball, while points that are greater than the threshold are considered “inside” the metaball. Generating an image can be computationally expensive, as the falloff function would need to be calculated at every pixel per frame.</p>
+        <p>A common approximation is to use marching squares (as outlined in this <a href="https://youtu.be/6oMZb3yP_H8">video</a> by Reducible). This implementation involves subdividing the frame into a grid of squares, then calculating the value of the falloff function at every corner of every square. These values can form a rough estimation of the metaballs’ bounds. While effective, this has the same issue as the naive approach: it is computationally expensive. Increased precision requires exponentially more computational power.</p>
+        
+        
+        
+        <h2>Implementation</h2>
+        <p>The implementation used in the above simulation follows the same core principles: a falloff function and a threshold. The key difference is that the above simulation avoids directly calculating the falloff function, and instead uses existing CSS properties to approximate the function. A gradient can be considered as the equation of a circle, and its border consists of the points where the equation equals some threshold. Because gradients are additive, applying gaussian blur to every component ball and adding together the gradients is equivalent to determining the falloff function. This was accomplished by the following CSS code: <code>filter: blur(15px)</code>.</p>
+        <p>The second component is threshold. Unlike the naive and marching squares approaches, there is no direct equation to solve, so there is no way to set a fixed threshold. The solution is to (once again) use an existing CSS property: contrast. Contrasting and thresholding function similarly: larger values get amplified, smaller values become reduced. This was accomplished by the following code: <code>filter: contrast(10000)</code>.</p>
+        <p>This completes the metaball implementation. I made a few more additions to my code, mainly animating the ball movement and adding a play/pause button in case the simulation becomes too computationally taxing.</p>
+        
+    </div>
+
+    
+
+    <div class="footer">
+        <div class="github" title="Github Repo"></div>
+
+        <div>created by <a href="http://devinsze.com/">Devin Sze</a>
+        </div>
+    </div>    
+    
+    <script src="metaball.js"></script>	
+</body>
+</html>
