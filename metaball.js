@@ -101,12 +101,10 @@ function create_balls() {
     }
     created = true;
     // return;
-    if (!isSafari) {
-        setTimeout(() => {
-            // after delay, start moving the balls
-            start_stop_balls();
-        }, 2500)
-    }
+    setTimeout(() => {
+        // after delay, start moving the balls
+        start_stop_balls();
+    }, 2500)
 }
 
 // var xx =285
@@ -226,13 +224,11 @@ function play_pause_mouse() {
 
 
 
-
-if (isSafari) {
-    window.onload = function() {       
-        setTimeout(function(){
-            start_stop_balls();
-        },5000); 
-    }
+window.onload = function() {       
+    setTimeout(function(){
+        create_balls();
+    },1000); 
 }
+
 
 
