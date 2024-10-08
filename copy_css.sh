@@ -1,9 +1,6 @@
-# copy css to 3 primary folders
 for folder in "about" "portfolio"
 do
-    cp style.css ${folder}/style.css
+    cp style.css ${folder}/style.css        # copy css to 2 other primary folders
+    cp logo_* ${folder}                     # copy logos to 2 other primary folders
+
 done
-
-# copy all logos to portfolio folder
-cp logo_* portfolio
-
