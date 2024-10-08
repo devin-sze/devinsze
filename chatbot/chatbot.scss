@@ -1,0 +1,221 @@
+
+/*variables*/
+$container_x_bound: 100%;
+$container_y_bound: 100vh; //100%;
+$padding: 50px;
+
+$balls_light: blue; //red;
+$balls_dark: #c8ff00;
+
+$accent_light: #7F7FFF; // #FF7F7F;
+$accent_light_2: #9d9df2;
+$accent_light_3: #cecef3;
+
+$accent_dark: #6666e7; //#4d4dff;//#7f7fff;//#7FFFFF;
+$accent_dark_2: #5454ec; //#4d4dff;//#7f7fff;//#7FFFFF;
+$accent_dark_3: #3636ff; //#4d4dff;//#7f7fff;//#7FFFFF;
+
+
+$background_light: #FFFFFF;
+$background_dark: #464646; //#4d4d4d; //#7F7F7F;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+html {
+    scroll-behavior: smooth;
+}
+h1 {
+    font-size: calc(max(10vw, 40px));
+    margin-bottom: 20px;
+}
+p, li{
+    font-size: inherit;
+    text-align: justify;
+}
+a {
+    // background-color: $accent_light_3;
+    color: #0000ff;
+    text-decoration: none;
+    transition: all 0.2s;
+    &:hover {
+        background-color: $accent_light_2;
+        border-radius: 0.2em;
+    }
+    &:active {
+        background-color: $accent_light;
+        color: white;
+        border-radius: 0.3em;
+    }
+}
+
+
+
+
+#header {
+    margin: $padding 10vw $padding 10vw;
+
+    // background-color: $background_light;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .chat {
+        position: relative;
+        
+        text-align: right;
+        font-size: 25px;
+        line-height: 30px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        margin-bottom: $padding/15;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 0.4s, transform 0.4s;
+        font-weight: 300;
+    }
+    .chat_right {
+        margin-left: auto;
+        margin-right: 0;
+        background-color: #0B80FD;
+        color: white; //#dee7ff;
+    }
+    #r1 {
+        border-bottom-right-radius: 5px;
+    }
+    #r2 {
+        border-top-right-radius: 5px;
+        // border-bottom-right-radius: 5px;
+    }
+    // #r3 {
+    //     border-top-right-radius: 5px;
+    //     border-bottom-right-radius: 5px;
+    // }
+    // #r4 {
+    //     border-top-right-radius: 5px;
+    // }
+    .chat_left {
+        left: 0px;
+        margin-right: auto; 
+        margin-left: 0;
+        height: 30px;
+        width: 8px*3 + 0.8*8px*2;
+        background-color: #E9E9EA; //#dee7ff;
+
+        div {
+            position: absolute;
+            background-color: #b0b0b0; //#91afff;
+            bottom: 15px;
+            width: 8px;
+            height: 8px;
+            margin: 0px;
+            padding: 0px;
+            border-radius: 50%;
+        }
+        #dot1 {
+            left: 20px + 0px;
+            animation: dot_move 2s ease-in-out infinite 1.5s;
+        }
+        #dot2 {
+            left: 20px + (8px*1.8);
+            animation: dot_move 2s ease-in-out infinite 1.7s;
+        }
+        #dot3 {
+            left: 20px + (8px*1.8)*2;
+            animation: dot_move 2s ease-in-out infinite 1.9s;
+        }
+    }
+
+
+}
+
+#index {
+    position: sticky;
+    background-color: #E9E9EA;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 10px 0px;
+    top: 0px;
+    transform: translateX(0vw);
+    transition: transform 0.2s;
+    top: 10px;
+    border-radius: 10px;
+
+    #index_label {
+        float: right;
+        transform-origin: bottom right;
+        transform: rotate(-90deg);
+        color: #00000000;
+    }
+
+}
+
+
+.content {
+    padding: 0px 10vw 100px 10vw;
+    color: black;
+
+    #quote {
+        margin: 0px 5vw;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 20px;
+        text-indent: -20px;
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.footer {
+    background-color: $accent_light;
+    margin: 0px;
+    padding: 50px 10vw;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes dot_move {
+    0% {
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(-10px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    #header > #l1 {
+        background-color: #212121;
+    }
+    body, h2, h3, p, ul {
+        color: white;
+        background-color: $background_dark;
+    }
+    a {
+        color: $accent_light_2;
+        &:hover {
+            background-color: $accent_dark_2;
+        }
+        &:active {
+            background-color: $accent_dark_2;
+        }
+    }
+}
+
