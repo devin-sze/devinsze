@@ -85,7 +85,7 @@ function create_balls() {
     setTimeout(() => {
         // after delay, start moving the balls
         start_stop_balls();
-    }, 400)
+    }, 1000)
 }
 
 // var xx =285
@@ -214,3 +214,9 @@ function play_pause_mouse() {
     }
     play_pause_on = !play_pause_on;
 }
+
+
+
+
+// var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+// console.log(isSafari)
