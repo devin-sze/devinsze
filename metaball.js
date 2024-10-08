@@ -226,6 +226,10 @@ function play_pause_mouse() {
 }
 
 
+window.onscroll = function() {
+    document.getElementById("play_pause_alert").style.opacity = "0";
+}
+
 
 
 // window.onload = function() {       
