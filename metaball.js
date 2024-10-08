@@ -108,10 +108,7 @@ function create_balls() {
             // after delay, start moving the balls
             start_stop_balls();
         }, 2500)
-    } else {
-        start_stop_balls()
     }
-    
 }
 
 // var xx =285
