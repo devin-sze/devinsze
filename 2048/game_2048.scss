@@ -1,0 +1,198 @@
+
+/*variables*/
+$border_width: 4px;
+$black_accent: #363636;
+$element_width: 100px;
+$con_font_size: 1em;
+$hud_height: 110px;
+
+/*font setup*/
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@font-face {
+    font-family: Nunito;
+    src: url('https://fonts.googleapis.com/css?family=Nunito');
+}
+
+/*Basic Setup*/
+
+body {
+    background-color: #8F8F8F;
+    font-family: Nunito;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+    background-color: #7e7e7e;//#FCBCB8;
+    transition: background-color 0.3s, color 0.3s;
+    transition-timing-function: ease;
+}
+a:hover {
+    background-color: #5f5f5f;
+}
+a:active {
+    background-color: #3d3d3d;
+    color: #8F8F8F;
+}
+
+/*GAMEPLAY: grid*/
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    
+    background-color: $black_accent;
+    height: $element_width * 4;
+    width: $element_width * 4;
+
+    /*stylistic*/
+    border: solid $black_accent $border_width;
+    border-radius: $border_width * 2;
+    margin: auto;
+}
+
+.grid div {
+    width: $element_width - (2*$border_width);
+    height: $element_width - (2*$border_width);
+
+    border: solid $black_accent $border_width;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+
+
+    line-height: $element_width - (2*$border_width);
+    vertical-align: center;
+
+    border-radius: $border_width * 2;
+}
+
+// gameplay hud
+.hud {    
+    width: $element_width * 4;
+    text-align: center;
+    margin: auto;
+    height: $hud_height;
+    margin-bottom: 2em;
+
+
+}
+
+.score_container {
+    height: $hud_height*2/3;
+    width: 45%;
+    float: left;
+    border-radius: $border-width * 2;
+
+    background-color: #242424;
+    color: white;
+    
+}
+.score_title {
+    height: 40%;
+    line-height: $hud_height * 2/5;
+    vertical-align: center;
+
+}
+#score {    
+    vertical-align: top;
+    font-size: 25px;
+
+}
+
+.restart {
+    text-decoration: none;
+    
+    border-radius: $border-width * 2;
+    
+    width: 45%;
+    float: right;
+
+    height: $hud_height*2/3;
+    line-height: $hud_height*2/3;
+    vertical-align: center;
+
+    font-size: 20px;
+
+    background-color: #242424;
+    color: white;
+    
+    transition: background-color 0.2s;
+    transition-timing-function: ease;
+
+
+}
+
+.restart:hover {
+    background-color: #e38b3d;
+    font-weight: bold;
+}
+.restart:active {
+    background-color: #faad69;
+}
+
+#result {
+    float: left;
+    
+    width: 100%;
+    padding-top: $hud_height/10;
+}
+
+.description {
+    padding-top: 2em;
+    width: $element_width * 4;
+    margin: auto;
+    padding-bottom: 2em;
+}
+
+.header {
+    padding-top: 0.85em;
+    padding-bottom: 0.85em;
+    
+    width: $element_width * 4;
+    margin: auto;
+    
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+
+/*The arrow thingy*/
+#graphic_arrow { 
+    width: 2em; 
+    height: 2em; 
+    overflow: hidden;
+    background-size: cover;
+    background-size: 2em 2em;
+    border: solid black 2px;
+    
+    transform: rotate(90deg);
+
+    background-image: url("arrow.png");
+
+    border-radius: 50%;
+
+    transition: transform 0.2s, background-color 0.7s;
+    transition-timing-function: ease;
+}
+
+#graphic_arrow:hover {
+    background-color: #faad69;
+    transform: translate(-2px, 0px) rotate(90deg);
+}
+#graphic_arrow:active {
+    background-color: #e38b3d;
+    transform: translate(-5px, 0px) rotate(90deg);
+}
+
+
+#box_image {
+    margin: auto;
+    padding: $con_font_size;
+    position: -webkit-sticky;
+    position: sticky;
+
+    top: 0px;
+    float: left;
+}

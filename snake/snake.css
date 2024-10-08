@@ -1,0 +1,228 @@
+/*variables*/
+/*font setup*/
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@font-face {
+  font-family: Nunito;
+  src: url("https://fonts.googleapis.com/css?family=Nunito");
+}
+
+/*Basic Setup*/
+body {
+  background-color: #46535E;
+  font-family: Nunito;
+  font-size: 0.5;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/*Background Text*/
+#background_text {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  line-height: 150vh;
+  vertical-align: bottom;
+  overflow: hidden;
+  white-space: nowrap;
+  direction: rtl;
+  text-align: left;
+  font-size: 4vh;
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+/*GAMEPLAY: grid*/
+.gameplay {
+  position: relative;
+  margin: auto;
+  width: 800px;
+}
+
+.gridback {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  left: 20px;
+  top: 20px;
+  height: 560px;
+  width: 760px;
+  /*stylistic*/
+  border: solid #003262 0px;
+  border-radius: 2px;
+  background-color: #46535E;
+  display: none;
+}
+
+.grid {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 600px;
+  width: 800px;
+  /*stylistic*/
+  border: solid #003262 0px;
+  border-radius: 2px;
+}
+
+.grid div {
+  width: 20px;
+  height: 20px;
+  border: solid #003262 0px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 20px;
+  vertical-align: center;
+  border-radius: 2px;
+}
+
+.glass {
+  background-clip: padding-box;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.home {
+  position: absolute;
+  z-index: 9;
+  height: 600px;
+  width: 800px;
+  /*stylistic*/
+  border: solid #003262 0px;
+  border-radius: 2px;
+  display: block;
+}
+
+#start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  background-color: #FDB515;
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+  -webkit-transition: width 0.25s, height 0.2s, line-height 0.2s, background-color 0.1s, border-radius 0.1s;
+  transition: width 0.25s, height 0.2s, line-height 0.2s, background-color 0.1s, border-radius 0.1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#start:hover {
+  width: 421.05263px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 7.5px;
+  background-color: #ffbd29;
+}
+
+#start:active {
+  width: 410.25641px;
+  height: 41px;
+  line-height: 41px;
+  border-radius: 8.5px;
+  background-color: #ffb30a;
+}
+
+.header {
+  height: 100px;
+  line-height: 68px;
+  font-size: 25px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: left;
+}
+
+#score_container {
+  float: right;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: right;
+}
+
+#score {
+  font-size: 20px;
+}
+
+#head {
+  height: 100px;
+}
+
+/*The arrow thingy*/
+#graphic_arrow {
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  background-size: cover;
+  background-size: 2em 2em;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  border: solid black 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-image: url("arrow.png");
+  border-radius: 50%;
+  -webkit-transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.7s;
+  transition: transform 0.2s, background-color 0.7s, -webkit-transform 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#graphic_arrow:hover {
+  background-color: #faad69;
+  -webkit-transform: translate(-2px, 0px) rotate(90deg);
+          transform: translate(-2px, 0px) rotate(90deg);
+}
+
+#graphic_arrow:active {
+  background-color: #e38b3d;
+  -webkit-transform: translate(-5px, 0px) rotate(90deg);
+          transform: translate(-5px, 0px) rotate(90deg);
+}
+
+#box_image {
+  margin: auto;
+  padding: 1em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  float: left;
+}
+/*# sourceMappingURL=snake.css.map */

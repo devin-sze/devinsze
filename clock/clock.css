@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Rubik&display=swap");
+@media (prefers-color-scheme: dark) {
+  #bodyBackDark {
+    background-image: linear-gradient(-45deg, #2d3036, #757a85);
+  }
+  #bottom_right {
+    color: #b8b8b8;
+  }
+  #github {
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
+}
+
+/*variables*/
+/*Font Import*/
+/*Basic Setup*/
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.5;
+  color: black;
+  margin: 0px;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#bodyBack {
+  background-image: linear-gradient(-45deg, #545a66, #cacaca);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+#bodyBackDark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.glass {
+  background-clip: padding-box;
+  -webkit-backdrop-filter: blur(1.25px);
+          backdrop-filter: blur(1.25px);
+}
+
+/*Back Button*/
+#graphic_arrow {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  background-size: 32px 32px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-image: url("arrow_white.png");
+  border-radius: 50%;
+  -webkit-transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.7s;
+  transition: transform 0.2s, background-color 0.7s, -webkit-transform 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-filter: contrast(1) drop-shadow(2px -2px 2px #424750de) drop-shadow(-2px 2px 2px #f1f1f18f);
+          filter: contrast(1) drop-shadow(2px -2px 2px #424750de) drop-shadow(-2px 2px 2px #f1f1f18f);
+}
+
+#graphic_arrow:hover {
+  -webkit-transform: translate(-2px, 0px) rotate(90deg);
+          transform: translate(-2px, 0px) rotate(90deg);
+  -webkit-filter: contrast(1.2) drop-shadow(2px -2px 2px #16171af5) drop-shadow(-2px 2px 2px #f1f1f1d5);
+          filter: contrast(1.2) drop-shadow(2px -2px 2px #16171af5) drop-shadow(-2px 2px 2px #f1f1f1d5);
+}
+
+#graphic_arrow:active {
+  -webkit-transform: translate(-5px, 0px) rotate(90deg);
+          transform: translate(-5px, 0px) rotate(90deg);
+  -webkit-filter: contrast(1.05) drop-shadow(1.5px -1.5px 1.5px #383d44e7) drop-shadow(-1.5px 1.5px 1.5px #f1f1f18f);
+          filter: contrast(1.05) drop-shadow(1.5px -1.5px 1.5px #383d44e7) drop-shadow(-1.5px 1.5px 1.5px #f1f1f18f);
+}
+
+#timeWrapper, #otherNums {
+  position: absolute;
+  width: 372px;
+  height: 50px;
+  left: 50%;
+  top: calc(50% - 50px);
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.digit {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  z-index: 100;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px 3px 0px 3px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: 50px;
+  font-weight: 900;
+  font-size: 20px;
+  background-color: #6e7472b7;
+  color: white;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-filter: drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+          filter: drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+
+.digit_buffer {
+  width: 18px;
+}
+
+.trans {
+  position: relative;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-filter: drop-shadow(6.5px 6.5px 4px #424750) drop-shadow(-6.5px -6.5px 4px #cacacade);
+          filter: drop-shadow(6.5px 6.5px 4px #424750) drop-shadow(-6.5px -6.5px 4px #cacacade);
+  background-color: #8f8f8d;
+  border-radius: 38px;
+}
+
+#hr0 {
+  height: 150px;
+}
+
+#min0, #sec0 {
+  height: 300px;
+}
+
+#hr1, #min1, #sec1 {
+  height: 500px;
+}
+
+.transPadding {
+  width: 9px;
+}
+
+#dig {
+  background-color: #8f8f8d;
+  height: 50px;
+  width: 38px;
+  margin: 0px;
+  color: #636363;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: 50px;
+  font-weight: 100;
+}
+
+.top {
+  border-radius: 38px 38px 0px 0px;
+}
+
+.bottom {
+  border-radius: 0px 0px 38px 38px;
+}
+
+#bottom_right {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.bottom_left {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+/*.con_link_img {
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    background-size: 40px 40px;
+
+    border-radius: 50%;
+    background-size: cover;
+    transition-timing-function: ease;
+    transition: all 0.2s;
+    
+    
+    float: left;
+}*/
+#github {
+  width: 38px;
+  height: 38px;
+  margin: 1px;
+  background-size: 38px 38px;
+  border-radius: 50%;
+  background-size: cover;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  float: left;
+  background-image: url("github.png");
+  -webkit-filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+          filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+
+#github:hover {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  background-size: 40px 40px;
+  -webkit-filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+          filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+}
+
+#github:active {
+  width: 35px;
+  height: 35px;
+  margin: 2.5px;
+  background-size: 35px 35px;
+  -webkit-filter: contrast(1.05) drop-shadow(1.5px 1.5px 1.5px #383d44e7) drop-shadow(-1.5px -1.5px 1.5px #f1f1f18f);
+          filter: contrast(1.05) drop-shadow(1.5px 1.5px 1.5px #383d44e7) drop-shadow(-1.5px -1.5px 1.5px #f1f1f18f);
+}
+
+#inspo {
+  z-index: 200;
+  position: relative;
+  font-size: 15px;
+  float: left;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #94ffe400;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#inspo:hover {
+  background-color: #94ffe47a;
+}
+
+#inspo:active {
+  background-color: #73bdaa;
+}
+
+#mode {
+  width: 36px;
+  height: 36px;
+  z-index: 100;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  background-size: 36px 36px;
+  overflow: hidden;
+  background-image: url("sun.png");
+  -webkit-filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+          filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+
+#mode:hover {
+  margin-left: 1px;
+  margin-bottom: 9px;
+  width: 38px;
+  height: 38px;
+  background-size: 38px 38px;
+  -webkit-filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+          filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+}
+
+#mode:active {
+  margin-left: 3px;
+  margin-bottom: 11px;
+  width: 34px;
+  height: 34px;
+  background-size: 34px 34px;
+  -webkit-filter: contrast(1.05) drop-shadow(1.5px 1.5px 1.5px #383d44e7) drop-shadow(-1.5px -1.5px 1.5px #f1f1f18f);
+          filter: contrast(1.05) drop-shadow(1.5px 1.5px 1.5px #383d44e7) drop-shadow(-1.5px -1.5px 1.5px #f1f1f18f);
+}
+
+/*#mode {
+    margin-left: 2px;
+    width: 36px;
+    height: 36px;
+    z-index: 100;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    transition-timing-function: ease-in;
+    transition: all 0.2s;
+    //box-sizing: border-box; 
+
+    background-size: 36px 36px;
+    overflow: hidden;
+    background-image: url("sun.png");
+    border: solid 0px grey;
+    filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+#mode:hover {
+    margin-left: -0.5px;
+    margin-bottom: 7.5px;
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    border: solid 1.5px grey;
+    filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+}
+#mode:active{
+    margin-left: 1px;
+    margin-bottom: 9px;
+    width: 34px;
+    height: 34px;
+    background-size: 34px 34px;
+    border: solid 2px grey;
+    filter: contrast(1.05) drop-shadow(2px 2px 2px #383d44e7) drop-shadow(-2px -2px 2px #f1f1f18f);
+}*/
+/*# sourceMappingURL=clock.css.map */

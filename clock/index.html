@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>devinsze | clock</title>
+        <link rel="stylesheet" href="clock.css">
+        <script src="clock.js" charset="utf-8"></script>
+        <script src="clock_move.js" charset="utf-8"></script>
+
+    </head>
+    <body onload="clockMain()">
+        <div id="bodyBack"></div>
+        <div id="bodyBackDark"></div>
+
+        <!--Back Button-->    
+        
+        <a href="https://devinsze.com/codingprojects" title="Back to Coding Projects">
+            <div id="graphic_arrow"></div>
+        </a>
+        
+
+        <!--The moving numbers in the background-->
+        
+        <div id="otherNums">
+            <div class="transPadding"></div>
+            <div class="trans" id="hr0"></div>
+            <div class="transPadding"></div>
+
+            <div class="transPadding"></div>
+            <div class="trans" id="hr1"></div>
+            <div class="transPadding"></div>
+
+            <div class="digit_buffer"></div>
+
+            <div class="transPadding"></div>
+            <div class="trans" id="min0"></div>
+            <div class="transPadding"></div>
+
+            <div class="transPadding"></div>
+            <div class="trans" id="min1"></div>
+            <div class="transPadding"></div>
+            
+            <div class="digit_buffer"></div>
+
+            <div class="transPadding"></div>
+            <div class="trans" id="sec0"></div>
+            <div class="transPadding"></div>
+            <div class="transPadding"></div>
+            <div class="trans" id="sec1"></div>
+            <div class="transPadding"></div>
+        </div>
+        
+        <!--The numbers at the front-->
+        <div id="timeWrapper">
+            <div class="digit glass" id="digit_hr0"></div>
+            <div class="digit glass" id="digit_hr1"></div>
+
+            <div class="digit_buffer"></div>
+
+            <div class="digit glass" id="digit_min0"></div>
+            <div class="digit glass" id="digit_min1"></div>
+            
+            <div class="digit_buffer"></div>
+
+            <div class="digit glass" id="digit_sec0"></div>
+            <div class="digit glass" id="digit_sec1"></div>
+        </div>
+
+        <div id="bottom_right"></div>
+
+
+
+
+
+        <div class="bottom_left">
+            <div id="mode" onclick="changeMode()" title="Change Mode"></div>
+
+            <a href="https://github.com/devin-sze/projects_clock" title="Github"><div class="con_link_img" id="github"></div></a>
+        </div>
+        
+
+        <!--<div class="glass" id="inspo"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2239404078">inspiration</a></div>-->
+        
+
+        
+
+
+
+
+    </body>
+</html>

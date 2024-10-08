@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!--<meta charset="utf-8">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>devinsze | shortest path</title>
+        <link rel="stylesheet" href="graph.css">
+        <script src="graph_main.js" charset="utf-8"></script>
+        <script src="graph_worldGen.js" charset="utf-8"></script>
+        <script src="graph_dimensions.js" charset="utf-8"></script>
+        <script src="graph_control.js" charset="utf-8"></script>
+        <script src="graph_mouseControl.js" charset="utf-8"></script>
+        <script src="graph_color.js" charset="utf-8"></script>
+
+        <script src="graph_pathStore.js" charset="utf-8"></script>
+        <script src="graph_queue.js" charset="utf-8"></script>
+        <script src="graph_priorityQueue.js" charset="utf-8"></script>
+
+        <script src="graph_reset_random.js" charset="utf-8"></script>
+        
+        <script src="graph_info.js" charset="utf-8"></script>
+
+
+        <script src="graph_alg_graphHelp.js" charset="utf-8"></script>
+        <script src="graph_alg_select.js" charset="utf-8"></script>
+
+        <script src="graph_alg_naive.js" charset="utf-8"></script>
+        <script src="graph_alg_dijkstra.js" charset="utf-8"></script>
+        <script src="graph_alg_aStar.js" charset="utf-8"></script>
+        <script src="graph_alg_naive2.js" charset="utf-8"></script>
+        
+    </head>
+    <body onload="generateMain()">
+        <!--Back Button-->    
+        
+        <!--<a href="https://devinsze.com/codingprojects" title="Back to Coding Projects">
+            <div id="graphic_arrow"></div>
+        </a>-->
+        <!--<div id="info_container">
+            draw a wall using the mouse or the randomize button 
+            </br>
+            place the start node by selecting and placing the start circle
+            </br>
+            place the end node by selecting and placing the finish circle
+            </br>
+            select an algorithm to run
+        </div>-->
+
+
+        <!--<div id="info_arrow">
+            ?
+        </div>-->
+
+
+        <div id="control_container">
+            <div id="control_left">Visualizing Shortest Path</div>
+            <div id="control_right">
+                <div id="algorithm_container">
+                    <div class="algorithm leftAlg selectAlgorithm" id="alg_naive" onclick="setAlgorithm('alg_naive')" title="Run Naive">Naive</div>
+                    <div class="algorithm" id="alg_naive2" onclick="setAlgorithm('alg_naive2')" title="Run Dual Naive">Dual Naive</div>
+                    <div class="algorithm" id="alg_aStar" onclick="setAlgorithm('alg_aStar')"  title="Run A* Search">A* Search</div>
+                    <div class="algorithm rightAlg" id="alg_dijkstra" onclick="setAlgorithm('alg_dijkstra')"  title="Run Dijkstra's">Dijkstra's</div>
+                </div>
+
+                <div class="control_icon_container" id="start_finish">
+                    <div id="control_start" onclick="setStart()" title="Start">
+                        <div class="icon" id="control_start_icon"></div>
+                        <div id="control_start_text">Start</div>
+                    </div>
+                    <div id="control_finish" onclick="setFinish()" title="Finish">
+                        <div class="icon" id="control_finish_icon"></div>
+                        <div id="control_finish_text">Finish</div>
+                    </div>
+                </div>
+
+                <div class="control_icon_container" id="random_reset">
+                    <div id="control_randomize" onclick="random()" title="Random">
+                        <div class="icon" id="control_randomize_icon"></div>
+                        <div id="control_randomize_text">Random</div>
+                    </div>
+                    <div id="control_reset" onclick="reset()" title="Reset">
+                        <div class="icon" id="control_reset_icon"></div>
+                        <div id="control_reset_text">Reset</div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="icon" id="control_arrow" onclick="controlDropdown()" title="Dropdown"></div>
+
+        
+        <!--Grid Relevant-->
+        <div class="grid_container" id="grid_container">
+            <div class="grid" id="grid"></div>    
+        </div>
+        <div class="gridback" id="gridback"></div>
+
+        
+        <div id="cursor"></div>
+        <div class="glass" id="failure">Failure</div>
+    </body>
+</html>

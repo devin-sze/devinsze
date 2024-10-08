@@ -1,0 +1,179 @@
+/*variables*/
+/*font setup*/
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@font-face {
+  font-family: Nunito;
+  src: url("https://fonts.googleapis.com/css?family=Nunito");
+}
+
+/*Basic Setup*/
+body {
+  background-color: #8F8F8F;
+  font-family: Nunito;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  background-color: #7e7e7e;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+a:hover {
+  background-color: #5f5f5f;
+}
+
+a:active {
+  background-color: #3d3d3d;
+  color: #8F8F8F;
+}
+
+/*GAMEPLAY: grid*/
+.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #363636;
+  height: 400px;
+  width: 400px;
+  /*stylistic*/
+  border: solid #363636 4px;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.grid div {
+  width: 92px;
+  height: 92px;
+  border: solid #363636 4px;
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 92px;
+  vertical-align: center;
+  border-radius: 8px;
+}
+
+.hud {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+  height: 110px;
+  margin-bottom: 2em;
+}
+
+.score_container {
+  height: 73.33333px;
+  width: 45%;
+  float: left;
+  border-radius: 8px;
+  background-color: #242424;
+  color: white;
+}
+
+.score_title {
+  height: 40%;
+  line-height: 44px;
+  vertical-align: center;
+}
+
+#score {
+  vertical-align: top;
+  font-size: 25px;
+}
+
+.restart {
+  text-decoration: none;
+  border-radius: 8px;
+  width: 45%;
+  float: right;
+  height: 73.33333px;
+  line-height: 73.33333px;
+  vertical-align: center;
+  font-size: 20px;
+  background-color: #242424;
+  color: white;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.restart:hover {
+  background-color: #e38b3d;
+  font-weight: bold;
+}
+
+.restart:active {
+  background-color: #faad69;
+}
+
+#result {
+  float: left;
+  width: 100%;
+  padding-top: 11px;
+}
+
+.description {
+  padding-top: 2em;
+  width: 400px;
+  margin: auto;
+  padding-bottom: 2em;
+}
+
+.header {
+  padding-top: 0.85em;
+  padding-bottom: 0.85em;
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+/*The arrow thingy*/
+#graphic_arrow {
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  background-size: cover;
+  background-size: 2em 2em;
+  border: solid black 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-image: url("arrow.png");
+  border-radius: 50%;
+  -webkit-transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: background-color 0.7s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.7s;
+  transition: transform 0.2s, background-color 0.7s, -webkit-transform 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#graphic_arrow:hover {
+  background-color: #faad69;
+  -webkit-transform: translate(-2px, 0px) rotate(90deg);
+          transform: translate(-2px, 0px) rotate(90deg);
+}
+
+#graphic_arrow:active {
+  background-color: #e38b3d;
+  -webkit-transform: translate(-5px, 0px) rotate(90deg);
+          transform: translate(-5px, 0px) rotate(90deg);
+}
+
+#box_image {
+  margin: auto;
+  padding: 1em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  float: left;
+}
+/*# sourceMappingURL=game_2048.css.map */

@@ -1,0 +1,379 @@
+@media (prefers-color-scheme: dark) {
+    #bodyBackDark {
+        background-image: linear-gradient(-45deg, #2d3036, #757a85);
+    }
+    #bottom_right {
+        color: #b8b8b8;
+    }
+    #github {
+        filter: invert(1);
+    }
+}
+
+
+
+/*variables*/
+
+
+
+$border_width: 0px;
+$element_width: 5px;
+
+$digit_width: 50px;
+$digit_padding: 3px;
+$padding_multipler: 6;
+
+
+$color_digits: #8f8f8d;
+$color_digits_font: #636363;
+
+$color_digit: #6e7472b7;
+$color_digit_font: white;
+
+
+
+
+
+/*Font Import*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rubik&display=swap');
+
+
+
+/*Basic Setup*/
+
+
+
+html {
+    overflow: hidden;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.5;
+    color: black;
+    margin: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+#bodyBack {
+    background-image: linear-gradient(-45deg, #545a66, #cacaca);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    z-index: -5;
+}
+#bodyBackDark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    z-index: -5;
+}
+
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+//sets the glassmorphism glass class
+.glass {
+    background-clip: padding-box;
+    backdrop-filter: blur($element_width / 4);
+}
+
+
+
+/*Back Button*/
+
+
+
+#graphic_arrow { 
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    background-size: 32px 32px;
+    //border: solid white 2px;
+    
+    transform: rotate(90deg);
+
+    background-image: url("arrow_white.png");
+
+    border-radius: 50%;
+
+    transition: transform 0.2s, background-color 0.7s;
+    transition-timing-function: ease;
+    filter: contrast(1) drop-shadow(2px -2px 2px #424750de) drop-shadow(-2px 2px 2px #f1f1f18f);
+}
+#graphic_arrow:hover {
+    //background-color: #faad69;
+    transform: translate(-2px, 0px) rotate(90deg);
+    filter: contrast(1.2) drop-shadow(2px -2px 2px #16171af5) drop-shadow(-2px 2px 2px #f1f1f1d5);
+}
+#graphic_arrow:active {
+    //background-color: #e38b3d;
+    transform: translate(-5px, 0px) rotate(90deg);
+    filter: contrast(1.05) drop-shadow(1.5px -1.5px 1.5px #383d44e7) drop-shadow(-1.5px 1.5px 1.5px #f1f1f18f);
+}
+
+
+
+#timeWrapper, #otherNums {
+    position: absolute;
+    width: $digit_width * 6 + $digit_padding*($padding_multipler*2 + 2*6);
+    height: $digit_width;
+    left: 50%;
+    top: calc(50% - 50px); //the 50px is equal to $digit_width
+    transform: translate(-50%, 50%);
+    display: flex;
+}
+
+
+.digit {
+    position: relative;
+    height: $digit_width;
+    width: $digit_width;
+    z-index: 100;
+
+    box-sizing: border-box;    
+    margin: 0px $digit_padding 0px $digit_padding;
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: $digit_width;
+    vertical-align: $digit_width;
+    font-weight: 900;
+    font-size: 20px;    
+
+    background-color: $color_digit;
+    color: $color_digit_font;
+
+    transition-timing-function: ease;
+    transition: all 1s;
+
+    filter: drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+
+
+.digit_buffer {
+    width: $digit_padding*$padding_multipler;
+}
+
+.trans {
+    position: relative;
+    transition-timing-function: ease;
+    transition: all 0.2s;
+    filter: drop-shadow(6.5px 6.5px 4px #424750) drop-shadow(-6.5px -6.5px 4px #cacacade); //#424750
+    //width: $digit_width - $digit_padding*3;
+    background-color: $color_digits;
+    border-radius: $digit_width - $digit_padding*4;
+}
+
+#hr0 {
+    height: $digit_width*3;
+}
+#min0, #sec0 {
+    height: $digit_width*6;
+}
+#hr1, #min1, #sec1 {
+    height: $digit_width*10;
+}
+
+
+.transPadding {
+    width: $digit_padding*3;
+}
+
+
+#dig {
+    background-color: $color_digits;
+    height: $digit_width;
+    width: $digit_width - $digit_padding*4;
+    margin: 0px;
+    //margin: 0px $digit_padding*3 0px $digit_padding*3;
+
+    color: $color_digits_font;
+    text-align: center;
+    line-height: $digit_width;
+    vertical-align: $digit_width;
+    font-weight: 100;
+}
+
+.top {
+    border-radius: $digit_width - $digit_padding*4 $digit_width - $digit_padding*4 0px 0px;
+}
+.bottom {
+    border-radius: 0px 0px $digit_width - $digit_padding*4 $digit_width - $digit_padding*4;
+}
+
+
+#bottom_right {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.bottom_left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+
+/*.con_link_img {
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    background-size: 40px 40px;
+
+    border-radius: 50%;
+    background-size: cover;
+    transition-timing-function: ease;
+    transition: all 0.2s;
+    
+    
+    float: left;
+}*/
+
+#github {
+    width: 38px;
+    height: 38px;
+    margin: 1px;
+    background-size: 38px 38px;
+
+    border-radius: 50%;
+    background-size: cover;
+    transition-timing-function: ease;
+    transition: all 0.3s;
+    
+    
+    float: left;
+
+    background-image: url("github.png");
+    filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+#github:hover {
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    background-size: 40px 40px;
+
+    filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+    //background-color: #94ffe47a;
+}
+#github:active {
+    width: 35px;
+    height: 35px;
+    margin: 2.5px;
+
+    background-size: 35px 35px;
+
+    //background-color: #7ceed2bd;
+    filter: contrast(1.05) drop-shadow(1.5px 1.5px 1.5px #383d44e7) drop-shadow(-1.5px -1.5px 1.5px #f1f1f18f);
+}
+
+#inspo {
+    z-index: 200;
+    position: relative;
+    font-size: 15px;
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #94ffe400;
+    transition-timing-function: ease;
+    transition: all 0.2s;
+}
+#inspo:hover {
+    background-color: #94ffe47a;
+}
+#inspo:active {
+    background-color: #73bdaa;
+}
+
+#mode {
+    width: 36px;
+    height: 36px;
+    z-index: 100;
+    margin-left: 2px;
+    margin-bottom: 10px;
+
+    border-radius: 20px;
+    transition-timing-function: ease-out;
+    transition: all 0.4s;
+    //box-sizing: border-box; 
+
+    background-size: 36px 36px;
+    overflow: hidden;
+    background-image: url("sun.png");
+    filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+#mode:hover {
+    margin-left: 1px;
+    margin-bottom: 9px;
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+}
+#mode:active{
+    margin-left: 3px;
+    margin-bottom: 11px;
+    width: 34px;
+    height: 34px;
+    background-size: 34px 34px;
+    filter: contrast(1.05) drop-shadow(1.5px 1.5px 1.5px #383d44e7) drop-shadow(-1.5px -1.5px 1.5px #f1f1f18f);
+}
+/*#mode {
+    margin-left: 2px;
+    width: 36px;
+    height: 36px;
+    z-index: 100;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    transition-timing-function: ease-in;
+    transition: all 0.2s;
+    //box-sizing: border-box; 
+
+    background-size: 36px 36px;
+    overflow: hidden;
+    background-image: url("sun.png");
+    border: solid 0px grey;
+    filter: contrast(1) drop-shadow(2px 2px 2px #424750de) drop-shadow(-2px -2px 2px #f1f1f18f);
+}
+#mode:hover {
+    margin-left: -0.5px;
+    margin-bottom: 7.5px;
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    border: solid 1.5px grey;
+    filter: contrast(1.2) drop-shadow(2px 2px 2px #282b30f5) drop-shadow(-2px -2px 2px #f1f1f1d5);
+}
+#mode:active{
+    margin-left: 1px;
+    margin-bottom: 9px;
+    width: 34px;
+    height: 34px;
+    background-size: 34px 34px;
+    border: solid 2px grey;
+    filter: contrast(1.05) drop-shadow(2px 2px 2px #383d44e7) drop-shadow(-2px -2px 2px #f1f1f18f);
+}*/
+

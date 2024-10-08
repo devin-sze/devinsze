@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>devinsze | play 2048</title>
+        <link rel="stylesheet" href="game_2048.css">
+        <script src="game_2048.js" charset="utf-8"></script>
+        <!--source: https://www.youtube.com/watch?v=aDn2g8XfSMc -->
+
+    </head>
+    <body>
+        
+
+        <div id="box_image">
+            <a href="https://devinsze.com/codingprojects" title="Back to Coding Projects">
+                <div id="graphic_arrow"></div>
+            </a>
+        </div>
+        
+        <div class="header">Play 2048</div>
+        
+        
+        <div class="hud">
+            <div class="score_container">
+                <div class="score_title">Score</div>
+                <span id="score">0</span>
+            </div>
+            <a href="javascript: reload();">
+                <div class="restart">
+                    Restart
+                </div>
+            </a>
+
+            <div id="result"></div>
+        </div>
+
+        <div class="grid"></div>
+
+        <div class="description">
+            <p>Combine the tiles to get <b>2048</b>!</p>
+            <p>Use the arrows or WASD to control the movement of the tiles. Tiles with the same number will be merged together.</p>
+            <p>Based on Ania Kubów's <a href="https://www.youtube.com/watch?v=aDn2g8XfSMc">implementation</a> with additional code sourced from <a href="https://stackoverflow.com/questions/8916620/disable-arrow-key-scrolling-in-users-browser">Stack Overflow</a>.</p>
+        </div>
+
+    </body>
+</html>
