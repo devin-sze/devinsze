@@ -119,8 +119,8 @@ function create_balls() {
                 setTimeout(() => {
                     // stop
                     start_stop_balls();
-                }, 200)
-            }, 200)
+                }, 1000)
+            }, 1000)
         }, 1000)
     }
 }
