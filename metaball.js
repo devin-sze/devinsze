@@ -107,7 +107,7 @@ function create_balls() {
         setTimeout(() => {
             // after delay, start moving the balls
             start_stop_balls();
-        }, 2500)
+        }, 1000)
     } else {
         // start
         setTimeout(() => {
@@ -119,9 +119,9 @@ function create_balls() {
                 setTimeout(() => {
                     // stop
                     start_stop_balls();
-                }, 500)
-            }, 500)
-        }, 2500)
+                }, 200)
+            }, 200)
+        }, 1000)
     }
 }
 
