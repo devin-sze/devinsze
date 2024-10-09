@@ -501,12 +501,12 @@ a.text_link {
     align-items: center;
     margin-top: 50px;
     
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     .social {
         height: 30px;
         width: 30px;
         background-size: cover;
-        margin: 0px 5px;
+        margin: 2.5px 5px;
         border-radius: 5px;
         cursor: pointer;
         transition: all 0.3s;
@@ -845,6 +845,7 @@ a.text_link {
 .ln {
     background-image: url("linkedin.png");
 }
+
 .mail {
     background-image: url("email.png");
     > #mail_arrow {
@@ -878,6 +879,12 @@ a.text_link {
 }
 .devpost {
     background-image: url("logo_devpost.png");
+}
+.wirestock {
+    background-image: url("logo_wirestock.png");
+    background-position: center;
+    background-size: contain !important;
+    background-repeat: no-repeat;
 }
 .more {
     background-image: url("logo_more.png");
@@ -1016,6 +1023,9 @@ html:not([data-scroll='0']) {
     }
 }
 @media only screen and (max-width: 450px) {
+    .social_container {
+        grid-template-columns: repeat(3, auto);
+    }
     .carousel_container {
         grid-template-columns:repeat(1, 1fr);
         .carousel_more {
