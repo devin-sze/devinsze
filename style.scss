@@ -1140,7 +1140,7 @@ html:not([data-scroll='0']) {
         }
     }
     .logo_transparent {
-        filter: grayscale(1) invert(100%);
+        filter: grayscale(1) invert(100%) !important;
         // border-radius: 50%;
     }
     .clickable {

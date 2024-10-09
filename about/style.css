@@ -1219,8 +1219,8 @@ html:not([data-scroll='0']) .header {
     background-color: #4c4c4c;
   }
   .logo_transparent {
-    -webkit-filter: grayscale(1) invert(100%);
-            filter: grayscale(1) invert(100%);
+    -webkit-filter: grayscale(1) invert(100%) !important;
+            filter: grayscale(1) invert(100%) !important;
   }
   .clickable:hover {
     background-color: #1a1a1a5b;
