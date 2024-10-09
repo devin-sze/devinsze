@@ -209,15 +209,29 @@ window.onresize = function(event) {
 
 // const email_address = "devin.sze@berkeley.edu";
 
-function askEmail() {
-    document.getElementById("mail_span").style.display = "block";
-    document.getElementById("mail_arrow").style.display = "block";
-}
+// function askEmail() {
+//     copyEmail()
+//     // document.getElementById("mail_span").style.display = "block";
+//     // document.getElementById("mail_arrow").style.display = "block";
+// }
 // function copyEmail() {
 //     var copyText = document.getElementById("email_copy");
 //     copyText.select();
 //     copyText.setSelectionRange(0, 99999);
 //     navigator.clipboard.writeText(copyText.value);
+
+function copyEmail() {
+
+    navigator.clipboard.writeText("devinsze11@gmail.com");
+    document.getElementById("copy_alert").style.opacity=1;
+    document.getElementById("copy_alert").style.bottom="10px";
+
+    setTimeout(() => {
+        // after delay, start moving the balls
+        document.getElementById("copy_alert").style.opacity=0;
+        document.getElementById("copy_alert").style.bottom="0px";
+    }, 3000)
+}
 
 
 

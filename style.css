@@ -1218,6 +1218,10 @@ html:not([data-scroll='0']) .header {
   .body_info > .body_label:nth-child(4n - 3), .body_info > .container:nth-child(4n-2) {
     background-color: #4c4c4c;
   }
+  .logo_transparent {
+    -webkit-filter: grayscale(1) invert(100%);
+            filter: grayscale(1) invert(100%);
+  }
   .clickable:hover {
     background-color: #1a1a1a5b;
   }
@@ -1245,9 +1249,6 @@ html:not([data-scroll='0']) .header {
     background-color: #001134;
     -webkit-box-shadow: 1.5px 1.5px 2px #16161697;
             box-shadow: 1.5px 1.5px 2px #16161697;
-  }
-  .logo_do_white {
-    background-color: white;
   }
 }
 /*# sourceMappingURL=style.css.map */

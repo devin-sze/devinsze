@@ -1139,6 +1139,10 @@ html:not([data-scroll='0']) {
             background-color: $dark_body_1;
         }
     }
+    .logo_transparent {
+        filter: grayscale(1) invert(100%);
+        // border-radius: 50%;
+    }
     .clickable {
         &:hover {
             background-color: #1a1a1a5b;
@@ -1167,7 +1171,7 @@ html:not([data-scroll='0']) {
             box-shadow: $dark_shadow_active;
         }
     }
-    .logo_do_white {
-        background-color: white;
-    }
+    // .logo_do_white {
+    //     background-color: white;
+    // }
 }
