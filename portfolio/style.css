@@ -457,15 +457,15 @@ a.text_link:active {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 50px;
-  -ms-grid-columns: (auto)[4];
-      grid-template-columns: repeat(4, auto);
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
 }
 
 .social_container .social {
   height: 30px;
   width: 30px;
   background-size: cover;
-  margin: 0px 5px;
+  margin: 2.5px 5px;
   border-radius: 5px;
   cursor: pointer;
   -webkit-transition: all 0.3s;
@@ -938,6 +938,13 @@ a.text_link:active {
   background-image: url("logo_devpost.png");
 }
 
+.wirestock {
+  background-image: url("logo_wirestock.png");
+  background-position: center;
+  background-size: contain !important;
+  background-repeat: no-repeat;
+}
+
 .more {
   background-image: url("logo_more.png");
 }
@@ -1101,6 +1108,10 @@ html:not([data-scroll='0']) .header {
 }
 
 @media only screen and (max-width: 450px) {
+  .social_container {
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+  }
   .carousel_container {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);

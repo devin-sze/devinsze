@@ -230,7 +230,7 @@ function copyEmail() {
         // after delay, start moving the balls
         document.getElementById("copy_alert").style.opacity=0;
         document.getElementById("copy_alert").style.bottom="0px";
-    }, 3000)
+    }, 2500)
 }
 
 
