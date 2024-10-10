@@ -75,7 +75,7 @@ a {
         margin-bottom: $padding/15;
         opacity: 0;
         transform: translateY(100%);
-        transition: opacity 0.4s, transform 0.4s;
+        transition: opacity 0.4s, transform 0.4s, border-bottom-right-radius 0.4s, border-top-right-radius 0.4s;
         font-weight: 300;
     }
     .chat_right {
@@ -85,10 +85,10 @@ a {
         color: white; //#dee7ff;
     }
     #r1 {
-        border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 25px;
     }
     #r2 {
-        border-top-right-radius: 5px;
+        border-top-right-radius: 25px;
         // border-bottom-right-radius: 5px;
     }
     // #r3 {

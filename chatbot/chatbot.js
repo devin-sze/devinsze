@@ -4,6 +4,8 @@ window.onload = function() {
     document.getElementById("r1").style.transform = "translateY(0)";
 
     setTimeout(function() {
+        document.getElementById("r1").style.borderBottomRightRadius = "5px";
+        document.getElementById("r2").style.borderTopRightRadius = "5px";
         document.getElementById("r2").style.opacity = "1";
         document.getElementById("r2").style.transform = "translateY(0)";
     }, 300);
