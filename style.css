@@ -934,6 +934,10 @@ a.text_link:active {
   background-image: url("github.png");
 }
 
+.arxiv {
+  background-image: url("arxiv.png");
+}
+
 .devpost {
   background-image: url("logo_devpost.png");
 }

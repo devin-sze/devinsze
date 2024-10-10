@@ -4,3 +4,6 @@ do
     cp logo_* ${folder}                     # copy logos to 2 other primary folders
     cp home.js ${folder}/home.js            # copy js functions to 2 other primary folders
 done
+
+cp github.png portfolio/github.png
+cp arxiv.png portfolio/arxiv.png
