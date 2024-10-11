@@ -935,7 +935,7 @@ a.text_link:active {
 }
 
 .arxiv {
-  background-image: url("arxiv.png");
+  background-image: url("logo_arxiv.png");
 }
 
 .devpost {
@@ -1272,6 +1272,9 @@ html:not([data-scroll='0']) .header {
   }
   .cdss {
     content: url("logo_cdss_dark.png");
+  }
+  .arxiv {
+    content: url("logo_arxiv_dark_invert.png");
   }
 }
 /*# sourceMappingURL=style.css.map */

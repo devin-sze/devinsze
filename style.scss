@@ -879,7 +879,7 @@ a.text_link {
     background-image: url("logo_github.png");
 }
 .arxiv {
-    background-image: url("arxiv.png")
+    background-image: url("logo_arxiv.png")
 }
 .devpost {
     background-image: url("logo_devpost.png");
@@ -1197,5 +1197,8 @@ html:not([data-scroll='0']) {
     }
     .cdss {
         content: url("logo_cdss_dark.png");
+    }
+    .arxiv {
+        content: url("logo_arxiv_dark_invert.png");
     }
 }
