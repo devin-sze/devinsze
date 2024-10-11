@@ -876,7 +876,7 @@ a.text_link {
     } 
 }
 .git {
-    background-image: url("github.png");
+    background-image: url("logo_github.png");
 }
 .arxiv {
     background-image: url("arxiv.png")
@@ -1124,6 +1124,9 @@ html:not([data-scroll='0']) {
         &:active {
             background-color: $light_transparent_color_1_invert !important;
         }
+    }
+    .wirestock {
+        background-image: url("logo_wirestock_dark_invert.png");
     }
 
     .link {

@@ -931,7 +931,7 @@ a.text_link:active {
 }
 
 .git {
-  background-image: url("github.png");
+  background-image: url("logo_github.png");
 }
 
 .arxiv {
@@ -1203,6 +1203,9 @@ html:not([data-scroll='0']) .header {
   }
   .social:active {
     background-color: white !important;
+  }
+  .wirestock {
+    background-image: url("logo_wirestock_dark_invert.png");
   }
   .link {
     -webkit-filter: invert(1);
