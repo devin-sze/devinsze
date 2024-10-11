@@ -7,3 +7,8 @@ done
 
 cp github.png portfolio/github.png
 cp arxiv.png portfolio/arxiv.png
+
+for folder in "2048" "about" "chatbot" "clock" "IAE" "labyrinth" "metaballs" "portfolio" "shortestpath" "snake"
+do
+    cp logo_devinsze_img.png ${folder}/logo_devinsze_img.png
+done
