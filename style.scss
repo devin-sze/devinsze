@@ -686,6 +686,7 @@ a.text_link {
     vertical-align: middle;
     border-radius: $border_radius;
 }
+
 #image_container {
     position: fixed;
     height: 100vh;
@@ -1124,6 +1125,7 @@ html:not([data-scroll='0']) {
             background-color: $light_transparent_color_1_invert !important;
         }
     }
+
     .link {
         filter: invert(1);
         &:hover {
@@ -1151,10 +1153,6 @@ html:not([data-scroll='0']) {
         > .body_label:nth-child(4n - 3), > .container:nth-child(4n-2) {
             background-color: $dark_body_1;
         }
-    }
-    .logo_transparent {
-        filter: grayscale(1) invert(100%) !important;
-        // border-radius: 50%;
     }
     .clickable {
         &:hover {
@@ -1187,4 +1185,14 @@ html:not([data-scroll='0']) {
     // .logo_do_white {
     //     background-color: white;
     // }
+
+    .aws {
+        content: url("logo_aws_dark.png");
+    }
+    .bair {
+        content: url("logo_bair_dark.png");
+    }
+    .cdss {
+        content: url("logo_cdss_dark.png");
+    }
 }
