@@ -1231,7 +1231,7 @@ html:not([data-scroll='0']) .header {
     background-color: #001134;
   }
   .body_info {
-    background-color: #313131;
+    background-color: #424242;
   }
   .body_info > .body_label:nth-child(4n - 3), .body_info > .container:nth-child(4n-2) {
     background-color: #4c4c4c;
